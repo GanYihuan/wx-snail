@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -73,9 +73,9 @@ npm run dev
 
 * **learn-koa/server.js**
 
-## 4-3 自己实现koa-logger中间件，打印所有请求的耗时
+## 4-3 自己实现 koa-logger 中间件，打印所有请求的耗时
 
-## 4-4, 4-5 koa-router入门
+## 4-4, 4-5 koa-router 入门
 
 * **learn-koa/router.js**
 
@@ -136,21 +136,21 @@ npm run dev
 
 ## 5-4: 原型图
 
-## 5-5 项目骨架搭建
+## 5-5, 5-6, 5-7 项目初始化页面-底部导航
 
-## 5-7: bottom nav
+## 5-8 代码封装
 
-## 5-8: package util.js config.js
+* **util.js** **config.js**
 
-## 5-9: summary
+## 5-10 使用 ESLint 自动规范代码
 
-## 5-10: ESLint
+* npm run lint **package.json**
 
 ```json
-"lint": "eslint --fix --ext .js,.vue src"
+"lint": "eslint --ext .js,.vue src"
 ```
 
-> /_ eslint-disable _/
+<!-- eslint-disable -->
 
 ## 6-1: user center message show, bug
 
