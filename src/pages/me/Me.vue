@@ -45,14 +45,16 @@ export default {
 		}
 	},
 	methods: {
-		async addBook(isbn) {
-			console.log(isbn)
-			const res = await post('/weapp/addbook', {
-				isbn,
-				openid: this.userInfo.openId
-			})
-			showModal('添加成功', `${res.title}添加成功`)
+		/* 跳转到该页面就自动执行 */
+		onShow() {
+			let userInfo = wx.getStorageSync('userInfo')
+			// console.log([userInfo])
+			if (userInfo) {
+				this.userInfo = userInfo
+			}
+			// console.log(this.userInfo)
 		},
+		/* 扫码 */
 		scanBook() {
       /* 扫码 */
 			wx.scanCode({
@@ -63,6 +65,14 @@ export default {
 				}
 			})
 		},
+		async addBook(isbn) {
+			console.log(isbn)
+			const res = await post('/weapp/addbook', {
+				isbn,
+				openid: this.userInfo.openId
+			})
+			showModal('添加成功', `${res.title}添加成功`)
+		},
 		login() {
       /* 登录可以获取用户信息 */
 			/* 获取缓存数据 */
@@ -70,7 +80,6 @@ export default {
 			const self = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
-				console.log('run1', config.loginUrl)
 				qcloud.login({
 					success: function(userInfo) {
 						qcloud.request({
