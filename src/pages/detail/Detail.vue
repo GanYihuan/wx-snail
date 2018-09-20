@@ -1,6 +1,6 @@
-<template>
+﻿<template>
   <div>
-    me
+    detail
   </div>
 </template>
 
