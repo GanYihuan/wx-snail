@@ -1,46 +1,77 @@
 <script>
-// import { showSuccess } from './util'
+// import { showSuccess, get } from './util'
 // import qcloud from 'wafer2-client-sdk'
 // import config from './config'
 
 export default {
-	// async created() {
-  // wx.request({
-  //   url: (config.host = '/weapp/demo'),
-  //   success: function(res) {
-  //     console.log(res)
-  //   }
-  // })
-  // const res = await get('/weapp/demo')
-  // console.log(123, res)
-  // console.log('小程序启动了')
-	// }
+	async created() {
+		// wx.request({
+		// 	url: (config.host = '/weapp/demo'),
+		// 	success: function(res) {
+		// 		console.log(res)
+		// 	}
+		// })
 
-	created() {
-		// 调用API从本地缓存中获取数据
-		const logs = wx.getStorageSync('logs') || []
-		logs.unshift(Date.now())
-		wx.setStorageSync('logs', logs)
-		console.log('app created and cache logs by setStorageSync')
+		// let user = wx.getStorageSync('userInfo')
+		// if (!user) {
+		// 	qcloud.setLoginUrl(config.loginUrl)
+		// 	qcloud.login({
+		// 		success: function(userInfo) {
+		// 			console.log('login success!', userInfo)
+		// 			showSuccess('login success!')
+		// 			wx.setStorageSync('userInfo', userInfo)
+		// 		},
+		// 		fail: function(err) {
+		// 			console.log('login fail', err)
+		// 		}
+		// 	})
+		// }
+		// const res = await get('/weapp/demo')
+		// console.log(123, res)
+		console.log('小程序启动了')
 	}
+
+	// created() {
+	// 	// 调用API从本地缓存中获取数据
+	// 	const logs = wx.getStorageSync('logs') || []
+	// 	logs.unshift(Date.now())
+	// 	wx.setStorageSync('logs', logs)
+	// 	console.log('app created and cache logs by setStorageSync')
+	// }
 }
 </script>
 
 <style>
-.container {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	padding: 200rpx 0;
-	box-sizing: border-box;
+.text-footer {
+	text-align: center;
+	font-size: 12px;
+	margin-bottom: 5px;
 }
-/* this rule will be remove */
-* {
-	transition: width 2s;
-	-moz-transition: width 2s;
-	-webkit-transition: width 2s;
-	-o-transition: width 2s;
+.text-primary {
+	color: #ea5149;
+}
+.page-title {
+	padding-left: 20px;
+	background: #eee;
+	line-height: 40px;
+	font-size: 14px;
+}
+.right {
+	float: right;
+}
+.btn {
+	color: white;
+	background: #ea5a49;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-left: 15px;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 40px;
+	height: 40px;
+	width: 100%;
+}
+.btn:active {
+	background: #fa5a49;
 }
 </style>

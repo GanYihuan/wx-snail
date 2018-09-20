@@ -29,8 +29,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ```console
 npm i nvm
 nvm ls
-nvm install 8.11.1
-nvm use 8.11.1
+<!-- nvm install 8.11.1 -->
+nvm install 10.0.0
+<!-- nvm use 8.11.1 -->
+nvm use 10.0.0
 ```
 
 ## 2-1 小程序帐号和开发工具
@@ -141,6 +143,7 @@ npm run dev
 ## 5-8 代码封装
 
 * **util.js** **config.js**
+* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉
 
 ## 5-10 使用 ESLint 自动规范代码
 
@@ -152,31 +155,38 @@ npm run dev
 
 <!-- eslint-disable -->
 
-## 6-1: user center message show, bug
+## 6-1 个人中心开发-用户信息获取+展示
 
-```console
-mysql:
-use cAuth
-show tables;
-select * from cSessionInfo;
-```
+> 小程序客户端腾讯云增强 SDK, 会话服务
+> SCSS
 
 ```console
 npm install wafer2-client-sdk -S
+npm install sass-loader node-sass -D
 ```
 
+> 数据库初始化
+
 ```console
-mysql:
+cd server
+npm install
+node tools/initdb.js
+npm run dev
+```
+
+> 数据库操作
+
+```console
+mysql.server start
+mysql -u root
+<!-- mysql: -->
+use cAuth
+show tables;
+select * from cSessionInfo;
 create database woniu;
 create table test(id int, name varchar(100));
 show tables;
 select * from test;
-```
-
-### scss
-
-```console
-npm install sass-loader console-sass -D
 ```
 
 ## 6-2: user center yearprogress
