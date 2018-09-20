@@ -1,14 +1,28 @@
 ﻿<template>
   <div class='container'>
-    <div class='userinfo'>
-      <img :src='userinfo.avatarUrl' alt="userinfo.avatarUrl">
-      <p>{{userinfo.nickName}}</p>
+    <div class='userInfo'>
+      <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
+      <p>{{userInfo.nickName}}</p>
     </div>
 		<!-- <open-data class='multi-hp-avatar' type='userAvatarUrl'></open-data> -->
 		<!-- <open-data class='multi-hp-nickname' type='userNickName'></open-data> -->
     <YearProgress></YearProgress>
-    <button v-if='userinfo.openId' class='btn' @click='scanBook'>添加图书</button>
-		<button v-else open-type='getUserInfo' lang='zh_CN' class='btn' @getuserinfo='login'>点击登录</button> 
+    <button 
+      v-if='userInfo.openId'
+      class='btn'
+      @click='scanBook'
+    >
+      添加图书
+    </button>
+		<button 
+      v-else
+      open-type='getuserInfo'
+      lang='zh_CN'
+      class='btn'
+      @getuserInfo='login'
+    >
+      点击登录
+    </button> 
   </div>
 </template>
 
@@ -24,7 +38,7 @@ export default {
 	},
 	data() {
 		return {
-			userinfo: {
+			userInfo: {
 				avatarUrl: '../../../static/img/unlogin.png',
 				nickName: ''
 			}
@@ -35,11 +49,12 @@ export default {
 			console.log(isbn)
 			const res = await post('/weapp/addbook', {
 				isbn,
-				openid: this.userinfo.openId
+				openid: this.userInfo.openId
 			})
 			showModal('添加成功', `${res.title}添加成功`)
 		},
 		scanBook() {
+      /* 扫码 */
 			wx.scanCode({
 				success: res => {
 					if (res.result) {
@@ -49,20 +64,23 @@ export default {
 			})
 		},
 		login() {
-			let user = wx.getStorageSync('userinfo')
+      /* 登录可以获取用户信息 */
+			/* 获取缓存数据 */
+			let user = wx.getStorageSync('userInfo')
 			const self = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
 				console.log('run1', config.loginUrl)
 				qcloud.login({
-					success: function(userinfo) {
+					success: function(userInfo) {
 						qcloud.request({
 							url: config.userUrl,
 							login: true,
 							success(userRes) {
-								showSuccess('登录成功')
-								wx.setStorageSync('userinfo', userRes.data.data)
-								self.userinfo = userRes.data.data
+                showSuccess('登录成功')
+                /* 数据缓存 */
+								wx.setStorageSync('userInfo', userRes.data.data)
+								self.userInfo = userRes.data.data
 							}
 						})
 					},
@@ -72,15 +90,16 @@ export default {
 				})
 			}
 		}
-	},
+  },
+  /* 跳转到该页面就自动执行 */
 	onShow() {
 		// console.log(123)
-		let userinfo = wx.getStorageSync('userinfo')
-		// console.log([userinfo])
-		if (userinfo) {
-			this.userinfo = userinfo
+		let userInfo = wx.getStorageSync('userInfo')
+		// console.log([userInfo])
+		if (userInfo) {
+			this.userInfo = userInfo
 		}
-		// console.log(this.userinfo)
+		// console.log(this.userInfo)
 	}
 }
 </script>
@@ -89,7 +108,7 @@ export default {
 .container {
 	padding: 0 30rpx;
 }
-.userinfo {
+.userInfo {
 	margin-top: 100rpx;
 	text-align: center;
 	img {

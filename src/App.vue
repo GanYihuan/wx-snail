@@ -5,6 +5,8 @@
 
 export default {
 	async created() {
+		/* 发起网络请求 */
+		/* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉 */
 		// wx.request({
 		// 	url: (config.host = '/weapp/demo'),
 		// 	success: function(res) {
@@ -12,6 +14,13 @@ export default {
 		// 	}
 		// })
 
+		/* util.js/request 替代上面的网络请求 */
+		// const res = await get('/weapp/demo')
+		// console.log(123, res)
+		console.log('小程序启动了')
+
+		/* 登录可以获取用户信息 */
+		/* 获取缓存数据 */
 		// let user = wx.getStorageSync('userInfo')
 		// if (!user) {
 		// 	qcloud.setLoginUrl(config.loginUrl)
@@ -19,6 +28,7 @@ export default {
 		// 		success: function(userInfo) {
 		// 			console.log('login success!', userInfo)
 		// 			showSuccess('login success!')
+		// /* 数据缓存 */
 		// 			wx.setStorageSync('userInfo', userInfo)
 		// 		},
 		// 		fail: function(err) {
@@ -26,13 +36,10 @@ export default {
 		// 		}
 		// 	})
 		// }
-		// const res = await get('/weapp/demo')
-		// console.log(123, res)
-		console.log('小程序启动了')
 	}
 
 	// created() {
-	// 	// 调用API从本地缓存中获取数据
+	/* 调用API从本地缓存中获取数据 */
 	// 	const logs = wx.getStorageSync('logs') || []
 	// 	logs.unshift(Date.now())
 	// 	wx.setStorageSync('logs', logs)
