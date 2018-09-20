@@ -1,5 +1,5 @@
 ﻿<template>
-  <div class="container">
+  <div>
     comment
   </div>
 </template>

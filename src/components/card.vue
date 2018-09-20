@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  props: ['text']
+	props: ['text']
 }
 </script>
 
 <style>
 .card {
-  padding: 10px;
+	padding: 10px;
 }
 </style>

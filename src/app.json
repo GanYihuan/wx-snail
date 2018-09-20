@@ -1,9 +1,5 @@
 {
-  "pages": [
-    "pages/books/main",
-    "pages/comments/main",
-    "pages/me/main"
-  ],
+  "pages": ["pages/me/main", "pages/books/main", "pages/comments/main"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#EA5149",
@@ -11,6 +7,7 @@
     "navigationBarTextStyle": "light"
   },
   "tabBar": {
+    "selectedColor": "#EA5149",
     "list": [
       {
         "pagePath": "pages/books/main",
