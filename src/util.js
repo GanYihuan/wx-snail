@@ -1,4 +1,5 @@
 // 工具函数库
+
 import config from './config'
 
 // http get工具函数 获取数据
@@ -10,6 +11,7 @@ export function post(url, data) {
   return request(url, 'POST', data)
 }
 
+/* 发起网络请求 */
 function request(url, method, data, header = {}) {
   return new Promise((resolve, reject) => {
     wx.request({
