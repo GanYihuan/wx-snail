@@ -1,6 +1,6 @@
 ﻿<template>
   <div>
-    <!-- <TopSwiper :tops='tops'></TopSwiper> -->
+    <TopSwiper :tops='tops'></TopSwiper>
     <Pic v-for='book in books' :key='book.id' :book='book'></Pic>
     <p class='text-footer' v-if='!more'>
       没有更多数据
