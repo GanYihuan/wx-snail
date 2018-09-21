@@ -296,12 +296,7 @@ alter table books add column count init default 0;
 
 * **server/components/top.js**
 
-## 8-9: top swiper finish
-
-```console
-mysql:
-show create table books
-```
+## 8-9 排行榜轮播图实现
 
 ## 9-1: get bookinfo, change title
 
