@@ -306,7 +306,7 @@ alter table books add column count init default 0;
 
 * **components/BookInfo.vue**
 
-## 9-3: bookDetail rate, user, publiched
+## 9-3 图书作者评分显示
 
 ## 9-4: book tags, summary
 
