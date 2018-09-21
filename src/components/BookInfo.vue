@@ -54,7 +54,6 @@ export default {
 <style lang='scss'>
 .bookinfo {
 	font-size: 14px;
-
 	.badge {
 		display: inline-block;
 		margin: 5px;
