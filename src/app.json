@@ -1,5 +1,10 @@
 {
-  "pages": ["pages/books/main", "pages/me/main", "pages/comments/main"],
+  "pages": [
+    "pages/books/main",
+    "pages/detail/main",
+    "pages/me/main",
+    "pages/comments/main"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#EA5149",
