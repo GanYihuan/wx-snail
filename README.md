@@ -253,6 +253,7 @@ select title from books;
 
 * **server/route/index.js**
 * **server/controllers/booklist.js**
+* **books/Book.vue**
 
 ## 8-2 图书卡片显示数据
 

@@ -41,6 +41,7 @@ router.post('/message', controllers.message.post)
 
 router.get('/demo', controllers.demo)
 router.post('/addbook', controllers.addbook)
+// [data](http://localhost:5757/weapp/booklist)
 router.get('/booklist', controllers.booklist)
 router.get('/bookdetail', controllers.bookdetail)
 router.get('/top', controllers.top)
