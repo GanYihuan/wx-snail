@@ -8,15 +8,15 @@
       :duration='1000'
       :circular='true'
     >
-      <div :key='imgindex' v-for='(top,imgindex) in imgUrls'>
+      <div v-for='(top, imgindex) in imgUrls' :key='imgindex'>
         <swiper-item>
-          <img  
+          <img
             @click='bookDetail(img)'
-            class='slide-image' 
-            mode='aspectFit' 
+            class='slide-image'
+            mode='aspectFit'
             v-for='img in top'
             :key='img.id'
-            :src="img.image" 
+            :src='img.image'
           >
         </swiper-item>
       </div>
@@ -29,7 +29,7 @@ export default {
 	props: ['tops'],
 	computed: {
 		imgUrls() {
-			// 如果通用 请用chunk函数  比如lodash的chunk方法
+			// 如果通用 请用chunk函数  比如l odash 的 chunk 方法
 			let res = this.tops
 			console.log([res.slice(0, 3), res.slice(3, 6), res.slice(6)])
 			return [res.slice(0, 3), res.slice(3, 6), res.slice(6)]

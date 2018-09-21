@@ -3,7 +3,7 @@
     <div class="book-card">
       <div class="thumb" @click.stop="preview">
 				<!-- mode: wechat document -->
-        <img :src="book.image" class="img" mode="aspectFit"/>
+        <img class="img" :src="book.image" mode="aspectFit"/>
       </div>
       <div class="detail">
         <div class="row text-primary">
@@ -61,17 +61,17 @@ export default {
 
 <style lang='scss' scoped>
 .book-card {
-	padding: 5px;
 	overflow: hidden;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	padding: 5px;
 	font-size: 14px;
 	.thumb {
+		float: left;
+		overflow: hidden;
+		margin: 0 auto;
 		width: 90px;
 		height: 90px;
-		float: left;
-		margin: 0 auto;
-		overflow: hidden;
 		.img {
 			max-width: 100%;
 			max-height: 100%;
@@ -80,8 +80,8 @@ export default {
 	.detail {
 		margin-left: 100px;
 		.row {
-			line-height: 20px;
 			margin-bottom: 3px;
+			line-height: 20px;
 		}
 		.right {
 			float: right;

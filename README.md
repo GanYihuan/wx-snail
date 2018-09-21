@@ -251,7 +251,10 @@ select title from books;
 
 ## 8-1 图书列表页获取数据
 
-## 8-2: show Book data
+* **server/route/index.js**
+* **server/controllers/booklist.js**
+
+## 8-2 图书卡片显示数据
 
 ## 8-3: Rate component
 
