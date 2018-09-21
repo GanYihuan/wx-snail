@@ -272,7 +272,7 @@ select title from books;
 
 * **Book.vue**
 
-## 8-6: pull down reload data
+## 8-6 图书滚动加载功能实现
 
 ## 8-7
 
