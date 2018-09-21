@@ -1,6 +1,7 @@
 ﻿<template>
   <div class='bookinfo'>
     <div class="thumb">
+      <!-- [img](https://developers.weixin.qq.com/miniprogram/dev/component/image.html) -->
       <img class='back' :src="info.image" mode='aspectFill'>
       <img class="img" :src="info.image" mode='aspectFit'>
       <div class="info">
@@ -63,8 +64,8 @@ export default {
 		color: #ea5a49;
 	}
 	.summary {
-		padding: 0 15px;
 		margin-top: 10px;
+		padding: 0 15px;
 		p {
 			text-indent: 2em;
 			font-size: 14px;
@@ -76,35 +77,35 @@ export default {
 	.detail {
 		padding: 5px 10px;
 		.avatar {
+			border-radius: 50%;
 			width: 20px;
 			height: 20px;
-			border-radius: 50%;
 			vertical-align: middle;
 		}
 	}
 	.thumb {
+		position: relative;
+		overflow: hidden;
 		width: 750rpx;
 		height: 500rpx;
-		overflow: hidden;
-		position: relative;
 		.back {
-			filter: blur(15px);
 			width: 100%;
+			filter: blur(15px);
 		}
 		.img {
 			position: absolute;
-			width: 100%;
-			height: 300rpx;
 			left: 0;
 			top: 30rpx;
+			width: 100%;
+			height: 300rpx;
 		}
 		.info {
-			color: white;
 			position: absolute;
-			width: 100%;
 			left: 0;
 			top: 330rpx;
+			width: 100%;
 			text-align: center;
+			color: white;
 			.title {
 				font-size: 20px;
 			}

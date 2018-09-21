@@ -302,7 +302,9 @@ alter table books add column count init default 0;
 
 * **server/components/bookdetail.js**
 
-## 9-2: book cover
+## 9-2 图书封面显示
+
+* **components/BookInfo.vue**
 
 ## 9-3: bookDetail rate, user, publiched
 
