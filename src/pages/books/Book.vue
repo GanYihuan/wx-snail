@@ -5,9 +5,6 @@
     <p class='text-footer' v-if='!more'>
       没有更多数据
     </p>
-    <!-- <div v-for='book in books' :key='book.id'>{{book.title}}</div> -->
-    <!-- <Pic v-for='book in books' :key='book.id' :book='book'></Pic> -->
-    <!-- <Pic></Pic> -->
   </div>
 </template>
 

@@ -218,7 +218,7 @@ drop table test;
 
 ## 7-3 图书录入功能-获取豆瓣图书信息接口 2
 
-## 7-4 图书录入功能-mysql新建图书表结构
+## 7-4 图书录入功能-mysql 新建图书表结构
 
 * **server/tools/snail.db**
 
@@ -257,9 +257,14 @@ select title from books;
 
 ## 8-2 图书卡片显示数据
 
-## 8-3: Rate component
+* **Pic.vue** replace **Card.vue**
 
-## 8-4: database add User NickName
+## 8-3 星级显示组件实现
+
+* **components/Rate.vue**
+* [vue-tiny-rate](https://github.com/shengxinjing/vue-tiny-rate)
+
+## 8-4 数据库链表查询显示添加人
 
 ## 8-5: pull down refresh
 

@@ -23,9 +23,11 @@
           </div>
         </div>
         <div class="row">
-          <!-- <div class="right">
+          <!--
+          <div class="right">
             {{book.user_info.nickName}}
-          </div> -->
+          </div>
+          -->
           <div class="left">
           {{book.publisher}}
           </div>
