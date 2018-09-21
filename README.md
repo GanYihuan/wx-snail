@@ -268,7 +268,9 @@ select title from books;
 
 * **server/controllers/booklist.js**
 
-## 8-5: pull down refresh
+## 8-5 下拉刷新功能的实现
+
+* **Book.vue**
 
 ## 8-6: pull down reload data
 

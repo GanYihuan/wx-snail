@@ -38,7 +38,8 @@ export default {
 			if (init) {
 				this.page = 0
 				this.more = true
-			}
+      }
+      // [showNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html)
 			wx.showNavigationBarLoading()
 			const books = await get('/weapp/booklist', { page: this.page })
 			if (books.list.length < 3 && this.page > 0) {
@@ -46,12 +47,14 @@ export default {
 				console.log('没有更多数据', this.more)
 			}
 			if (init) {
-				this.books = books.list
+        this.books = books.list
+        // [stopPullDownRefresh](https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.stopPullDownRefresh.html)
 				wx.stopPullDownRefresh()
 			} else {
 				// 下拉刷新，不能直接覆盖books 而是累加
 				this.books = this.books.concat(books.list)
-			}
+      }
+      // [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html)
 			wx.hideNavigationBarLoading()
 		},
 		/* 获取排行榜 */
@@ -60,6 +63,7 @@ export default {
 			this.tops = tops.list
 		}
 	},
+	// [refresh](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
 	onPullDownRefresh() {
 		console.log('下拉')
 		this.getList(true)
