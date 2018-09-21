@@ -197,7 +197,7 @@ select * from test;
 
 ## 6-5 个人中心-代码完善-eslint 格式化代码
 
-## 7-1: mysql use
+## 7-1 图书录入功能 - mysql 使用
 
 ```console
 mysql.server start
@@ -211,11 +211,16 @@ select create-time, open_id from cSessionInfo;
 drop table test;
 ```
 
-## 7-2
+## 7-2 图书录入功能-获取豆瓣图书信息接口
 
-## 7-3: get douban book interface info
+* **server/route/index.js**
+* **server/controllers/addbook.js**
 
-## 7-4: mysql
+## 7-3 图书录入功能-获取豆瓣图书信息接口 2
+
+## 7-4 图书录入功能-mysql新建图书表结构
+
+* **server/tools/snail.db**
 
 ```console
 CREATE TABLE books (
@@ -236,13 +241,15 @@ CREATE TABLE books (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 ```
 
-## 7-5
+## 7-5 图书录入功能-添加图书功能完成
 
 ```console
 select title from books;
 ```
 
-## 8-1: get Book data
+* **util.js**
+
+## 8-1 图书列表页获取数据
 
 ## 8-2: show Book data
 
