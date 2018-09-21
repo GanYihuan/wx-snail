@@ -292,7 +292,9 @@ alter table books add column count init default 0;
 
 * **server/components/bookdetail.js**
 
-## 8-8: get top swiper data
+## 8-8 排行榜轮播图数据获取
+
+* **server/components/top.js**
 
 ## 8-9: top swiper finish
 

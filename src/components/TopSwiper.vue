@@ -25,6 +25,7 @@
 </template>
 
 <script>
+// [swiper](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)
 export default {
 	props: ['tops'],
 	computed: {

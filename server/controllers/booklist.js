@@ -36,6 +36,7 @@ module.exports = async ctx => {
     // 全部图书 分页
     books = await mysqlSelect.limit(size).offset(Number(page) * size)
   }
+  // 返回
   ctx.state.data = {
     list: books.map(v => {
       const info = JSON.parse(v.user_info)

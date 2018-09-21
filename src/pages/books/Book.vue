@@ -36,6 +36,10 @@ export default {
 			tops: []
 		}
 	},
+	mounted() {
+		this.getList(true)
+		this.getTop()
+	},
 	methods: {
 		async getList(init) {
 			if (init) {
@@ -79,10 +83,6 @@ export default {
 		}
 		this.page = this.page + 1
 		this.getList()
-	},
-	mounted() {
-		this.getList(true)
-		this.getTop()
 	}
 }
 </script>

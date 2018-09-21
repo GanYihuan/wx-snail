@@ -10,6 +10,7 @@ module.exports = async ctx => {
     .first()
   const info = JSON.parse(detail.user_info)
 
+  // 返回
   ctx.state.data = Object.assign({}, detail, {
     tags: detail.tags.split(','),
     summary: detail.summary.split('\n'),
