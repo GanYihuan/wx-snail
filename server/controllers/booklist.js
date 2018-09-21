@@ -2,6 +2,26 @@ const { mysql } = require('../qcloud')
 
 // [data](http://localhost:5757/weapp/booklist)
 module.exports = async ctx => {
+  // const books = await mysql('books').select('*')
+  // ctx.state.data = {
+  //   list: books
+  // }
+
+  const books = await mysql('books')
+    .select('books.*', 'cSessionInfo.user_info')
+    .join('cSessionInfo', 'books.openid', 'cSessionInfo.open_id')
+    .orderBy('books.id', 'desc')
+  ctx.state.data = {
+    list: books.map(v => {
+      const info = JSON.parse(v.user_info)
+      return Object.assign({}, v, {
+        user_info: {
+          nickName: info.nickName
+        }
+      })
+    })
+  }
+
   // const { page, openid } = ctx.request.query
   // const size = 10
   // const mysqlSelect = mysql('books')
@@ -27,8 +47,4 @@ module.exports = async ctx => {
   //     })
   //   })
   // }
-  const books = await mysql('books').select('*')
-  ctx.state.data = {
-    list: books
-  }
 }

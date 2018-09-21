@@ -23,13 +23,11 @@
           </div>
         </div>
         <div class="row">
-          <!--
           <div class="right">
             {{book.user_info.nickName}}
           </div>
-          -->
           <div class="left">
-          {{book.publisher}}
+            {{book.publisher}}
           </div>
         </div>
       </div>

@@ -266,6 +266,8 @@ select title from books;
 
 ## 8-4 数据库链表查询显示添加人
 
+* **server/controllers/booklist.js**
+
 ## 8-5: pull down refresh
 
 ## 8-6: pull down reload data
