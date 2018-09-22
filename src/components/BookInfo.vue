@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="detail">
-      <img :src="userinfo.image" class='avatar' mode='aspectFit'>
+      <img class='avatar' :src="userinfo.image" mode='aspectFit'>
       {{userinfo.name}}
       <div class="right text-primary">
         {{info.rate}}分
@@ -28,10 +28,10 @@
       </div>
     </div>
     <div class="tags">
-      <div class="badge" :key='tag' v-for='tag in info.tags'>{{tag}}</div>
+      <div class="badge" v-for='tag in info.tags' :key='tag'>{{tag}}</div>
     </div>
     <div class="summary">
-      <p :key='i' v-for='(sum, i) in info.summary'>{{sum}}</p>
+      <p v-for='(sum, i) in info.summary' :key='i'>{{sum}}</p>
     </div>
   </div>
 </template>
@@ -59,8 +59,8 @@ export default {
 		display: inline-block;
 		margin: 5px;
 		padding: 5px;
-		border-radius: 10px;
 		border: 1px #ea5a49 solid;
+		border-radius: 10px;
 		color: #ea5a49;
 	}
 	.summary {
