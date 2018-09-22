@@ -326,7 +326,9 @@ alter table books add column count init default 0;
 
 * **server/components/addcomment.js**
 
-## 9-9: comemnt list back-end
+## 9-9 评论列表实现
+
+* **server/components/commentlist.js**
 
 ## 9-10, 9-11: comment module, share to your friend
 
