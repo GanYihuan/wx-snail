@@ -308,13 +308,13 @@ alter table books add column count init default 0;
 
 ## 9-3 图书作者评分显示
 
-## 9-4 图书tag和简介显示
+## 9-4 图书 tag 和简介显示
 
 ## 9-5 评论手机型号的获取
 
 * **Detail.vue**
 
-## 9-6 获取地理位置（使用小程序API和百度地图API）
+## 9-6 获取地理位置（使用小程序 API 和百度地图 API）
 
 * **Detail.vue**
 
@@ -334,9 +334,15 @@ alter table books add column count init default 0;
 
 * **Detail.vue**
 
-## 9-13: format
+## 9-13 代码规范修正
 
-> package.json lint
+* **package.json**
+
+```console
+"scripts": {
+  "lint": "eslint --ext .js,.vue src"
+},
+```
 
 ## 10-1: comment page show has comment
 
