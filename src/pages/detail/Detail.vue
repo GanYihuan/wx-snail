@@ -28,7 +28,8 @@
     <div v-else class='text-footer'>
       未登录或者已经评论过啦
     </div>
-    <button open-type='share' class="btn">转发给好友</button>
+    <!-- [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) -->
+    <button class="btn" open-type='share'>转发给好友</button>
   </div>
 </template>
 
@@ -58,8 +59,8 @@ export default {
 		// [this.$root.$mp.query.id](http://mpvue.com/mpvue/#_18)
 		this.bookid = this.$root.$mp.query.id
 		this.getDetail()
-    this.getComments()
-    // [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html)
+		this.getComments()
+		// [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html)
 		const userinfo = wx.getStorageSync('userinfo')
 		console.log('userinfo', userinfo)
 		if (userinfo) {
@@ -67,12 +68,13 @@ export default {
 		}
 	},
 	computed: {
+		// 是否显示添加的表单
 		showAdd() {
 			// 没登录
 			if (!this.userinfo.openId) {
 				return false
 			}
-			// 评论页面里查到有自己的openid
+			// 评论页面里查到有自己的 openid
 			if (this.comments.filter(v => v.openid === this.userinfo.openId).length) {
 				return false
 			}
@@ -102,8 +104,8 @@ export default {
 		},
 		async getDetail() {
 			const info = await get('/weapp/bookdetail', { id: this.bookid })
-      // [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html)
-      wx.setNavigationBarTitle({
+			// [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html)
+			wx.setNavigationBarTitle({
 				title: info.title
 			})
 			this.info = info
@@ -114,12 +116,12 @@ export default {
 			this.comments = comments.list || []
 		},
 		getGeo(e) {
-      // [百度地图 api 访问应用（AK）](http://lbsyun.baidu.com/apiconsole/key)
-      const ak = 'rsKejfyowllq0dD0IjLbqUaFHiqMlU4Y'
-      // [逆地理编码](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding-abroad)
+			// [百度地图 api 访问应用（AK）](http://lbsyun.baidu.com/apiconsole/key)
+			const ak = 'rsKejfyowllq0dD0IjLbqUaFHiqMlU4Y'
+			// [逆地理编码](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding-abroad)
 			let url = 'http://api.map.baidu.com/geocoder/v2/'
 			if (e.target.value) {
-        // [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)
+				// [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)
 				wx.getLocation({
 					success: geo => {
 						wx.request({
@@ -148,7 +150,7 @@ export default {
 		getPhone(e) {
 			console.log('手机型号获取中')
 			if (e.target.value) {
-        // [getSystemInfoSync](https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfoSync.html)
+				// [getSystemInfoSync](https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfoSync.html)
 				const phoneInfo = wx.getSystemInfoSync()
 				// console.log(phoneInfo)
 				this.phone = phoneInfo.model

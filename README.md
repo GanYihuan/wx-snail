@@ -330,7 +330,9 @@ alter table books add column count init default 0;
 
 * **server/components/commentlist.js**
 
-## 9-10, 9-11: comment module, share to your friend
+## 9-10, 9-11 评论模块实现
+
+* **Detail.vue**
 
 ## 9-13: format
 

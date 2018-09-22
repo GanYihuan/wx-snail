@@ -3,18 +3,18 @@
     <div class="page-title" v-if='comments.length'>
       评论
     </div>
-    <div 
+    <div
       class="comment"
-      v-for='comment in comments' 
+      v-for='comment in comments'
       :key='comment.id'
       @click='handleClick(comment)'
     >
       <div class="user">
         <div class="inline">
-          <img 
-            :src="comment.image" 
+          <img
             class="avatar"
             mode='aspectFit'
+            :src="comment.image"
           >
           {{comment.title}}
         </div>
@@ -53,9 +53,9 @@ export default {
 	background: #eee;
 	font-size: 14px;
 	.comment {
-		background: white;
 		margin-bottom: 10px;
 		padding: 5px 20px;
+		background: #fff;
 		.content {
 			margin: 10px 0;
 		}
