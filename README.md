@@ -344,7 +344,10 @@ alter table books add column count init default 0;
 },
 ```
 
-## 10-1: comment page show has comment
+## 10-1 个人已评论列表实现
+
+* **comment.vue**
+* **server/components/commentlist.js**
 
 ## 10-2: book list
 

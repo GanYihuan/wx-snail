@@ -7,7 +7,7 @@ module.exports = async ctx => {
     .join('cSessionInfo', 'comments.openid', 'cSessionInfo.open_id')
   let comments
   if (bookid) {
-    // 图书详情也的评论列表
+    // 图书详情页的评论列表
     comments = await mysqlSelect.where('bookid', bookid)
   } else if (openid) {
     // 根据个人的 opid 筛选
