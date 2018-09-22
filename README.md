@@ -1,6 +1,6 @@
 # imooc-snail
 
-> A Mpvue project
+> 全网首发 mpvue 课程小程序全栈开发
 
 ## 程序运行
 
@@ -41,7 +41,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 * user: m15012856094@163.com
 * wxc9686cc036184c63 (读书的蜗牛 小程序)
-* wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序))
+* wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
 
 > 管理 node 版本
 
@@ -55,6 +55,13 @@ nvm use 10.0.0
 ```
 
 ## 2-1 小程序帐号和开发工具
+
+* [后台地址](https://mp.weixin.qq.com/) -> 立即注册 -> 小程序 -> 登录
+* [小程序信息填写](https://mp.weixin.qq.com/wxopen/initprofile?action=home&lang=zh_CN&token=1921737503)
+* 设置 -> 开发设置 -> [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN) -> 开发者工具 -> 腾讯云开通
+* [文档地址](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)
+* [开发工具下载地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html) -> AppID
+* **app.json** 修改小程序外观
 
 ## 2-2 原生小程序 - 项目目录结构
 
@@ -376,10 +383,7 @@ alter table books add column count init default 0;
 
 ## 12-2 小程序发布上线流程
 
-> **src/config.jss** 修改, 微信开发者工具里面复制 `Development Environment request Domain Name`: `https://qod21e5e.qcloud.la`
-> [AppID(小程序ID)](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
-> **server/config.js** 改两处
-> 微信开发者工具 -> 腾讯云 -> 上传测试代码
+> **src/config.jss** 修改, 微信开发者工具里面复制 `Development Environment request Domain Name`: `https://qod21e5e.qcloud.la` > [AppID(小程序 ID)](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN) > **server/config.js** 改两处微信开发者工具 -> 腾讯云 -> 上传测试代码
 > [腾讯云](https://mp.weixin.qq.com/wxopen/thirdtools?action=qcloud_tool&token=1921737503&lang=zh_CN)
 > mysql 客户端, 用户名: root, 密码: AppID
 
