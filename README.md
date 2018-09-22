@@ -351,4 +351,6 @@ alter table books add column count init default 0;
 
 ## 10-2 图书列表
 
-## 10-3: book list back-end fix
+## 10-3 图书列表后端修改
+
+* **server/components/commentlist.js**
