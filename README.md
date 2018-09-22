@@ -73,7 +73,7 @@ nvm use 10.0.0
 
 ## 2-3 原生小程序 - 项目 app.json 配置
 
-* [app.json配置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
+* [app.json 配置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
 
 ## 2-4 原生小程序 - 自带组件及 API
 
@@ -81,7 +81,30 @@ nvm use 10.0.0
 
 ## 2-5 原生小程序 - 语法缺点
 
-* 不能使用 npm
+> API
+
+* Wx.request 发送请求
+* Wx.previewImage 预览图片
+* Wx.setStorage|getStorage 本地存储
+* Location 地理位置
+* ScanCode 扫码
+* showToast 显示提示信息
+* 设置导航条
+* 获取用户信息
+* 页面导航 navigateTo, redirectTo, switchTab
+* 动画、振动、截屏，亮度
+* 音乐、视频、地图、文件
+* 加速计 罗盘 wifi nfc 等等
+
+> 小程序自带组件
+
+* 视图, 表单, 媒体
+
+> 语法缺点
+
+* 不能使用 npm，使用第三方包的方式太原始
+* 需要为小程序单独开发代码，不能和 web 系统重用
+* 开发效率和学习成本（小程序特有的语法）
 
 ## 3-7 mpvue 入门 01
 
