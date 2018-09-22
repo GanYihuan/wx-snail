@@ -113,9 +113,12 @@ export default {
 			this.comments = comments.list || []
 		},
 		getGeo(e) {
-			const ak = 'nLCYXhhXoQgwPQIobGoNtGuXdIQ2wYH8'
+      // [百度地图 api 访问应用（AK）](http://lbsyun.baidu.com/apiconsole/key)
+      const ak = 'rsKejfyowllq0dD0IjLbqUaFHiqMlU4Y'
+      // [逆地理编码](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding-abroad)
 			let url = 'http://api.map.baidu.com/geocoder/v2/'
 			if (e.target.value) {
+        // [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)
 				wx.getLocation({
 					success: geo => {
 						wx.request({

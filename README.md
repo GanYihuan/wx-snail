@@ -312,7 +312,11 @@ alter table books add column count init default 0;
 
 ## 9-5 评论手机型号的获取
 
-## 9-6: get Location
+* **Detail.vue**
+
+## 9-6 获取地理位置（使用小程序API和百度地图API）
+
+* **Detail.vue**
 
 ## 9-7: click comment post request
 
