@@ -58,7 +58,8 @@ export default {
 		// [this.$root.$mp.query.id](http://mpvue.com/mpvue/#_18)
 		this.bookid = this.$root.$mp.query.id
 		this.getDetail()
-		this.getComments()
+    this.getComments()
+    // [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html)
 		const userinfo = wx.getStorageSync('userinfo')
 		console.log('userinfo', userinfo)
 		if (userinfo) {
@@ -83,7 +84,7 @@ export default {
 			if (!this.comment) {
 				return
 			}
-			// 评论内容 手机型号  地理位置 图书id 用户的openid
+			// 评论内容 手机型号 地理位置 图书id 用户的openid
 			const data = {
 				openid: this.userinfo.openId,
 				bookid: this.bookid,

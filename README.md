@@ -318,7 +318,9 @@ alter table books add column count init default 0;
 
 * **Detail.vue**
 
-## 9-7: click comment post request
+## 9-7 点击评论发起请求
+
+* **Detail.vue**
 
 ## 9-8: comment back-end interface
 
