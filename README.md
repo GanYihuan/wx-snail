@@ -322,7 +322,9 @@ alter table books add column count init default 0;
 
 * **Detail.vue**
 
-## 9-8: comment back-end interface
+## 9-8 评论后台接口实现
+
+* **server/components/addcomment.js**
 
 ## 9-9: comemnt list back-end
 
