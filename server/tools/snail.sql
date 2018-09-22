@@ -1,6 +1,6 @@
 ﻿ DROP TABLE IF EXISTS books;
- 
- create table books (
+
+create table books (
   id int(11) NOT NULL AUTO_INCREMENT primary key,
   isbn varchar(20) NOT NULL,
   openid varchar(100) NOT NULL,

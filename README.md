@@ -2,6 +2,25 @@
 
 > A Mpvue project
 
+## 程序运行
+
+```console
+<!-- 开启数据库 -->
+mysql.server start
+mysql -u root
+<!-- 运行后端服务器 -->
+cd server
+nvm use 10.0.0
+npm run dev
+<!-- 运行程序 -->
+cd imooc-snail
+node -v
+nvm use 10.0.0
+npm run dev
+<!-- 打开微信开发者工具 -->
+选择 imooc-snail
+```
+
 ## Build Setup
 
 ```bash
@@ -354,3 +373,47 @@ alter table books add column count init default 0;
 ## 10-3 图书列表后端修改
 
 * **server/components/commentlist.js**
+
+## 12-2 小程序发布上线流程
+
+> **src/config.jss** 修改, 微信开发者工具里面复制 `Development Environment request Domain Name`: `https://qod21e5e.qcloud.la`
+> [AppID(小程序ID)](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
+> **server/config.js** 改两处
+> 微信开发者工具 -> 腾讯云 -> 上传测试代码
+> [腾讯云](https://mp.weixin.qq.com/wxopen/thirdtools?action=qcloud_tool&token=1921737503&lang=zh_CN)
+> mysql 客户端, 用户名: root, 密码: AppID
+
+```console
+<!-- 内容复制到 mysql 客户端, cAuth -> SQL 里面 -->
+mysql> show create table books;
+<!-- 内容 -->
+CREATE TABLE `books` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `isbn` varchar(20) NOT NULL,
+  `openid` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `alt` varchar(100) NOT NULL,
+  `publisher` varchar(100) NOT NULL,
+  `summary` varchar(1000) NOT NULL,
+  `price` varchar(100) DEFAULT NULL,
+  `rate` float DEFAULT NULL,
+  `tags` varchar(100) DEFAULT NULL,
+  `author` varchar(100) DEFAULT NULL,
+  `count` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8
+
+<!-- 内容复制到 mysql 客户端, cAuth -> SQL 里面 -->
+mysql> show create table comments;
+<!-- 内容 -->
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `openid` varchar(100) NOT NULL,
+  `bookid` varchar(100) NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `location` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8
+```
