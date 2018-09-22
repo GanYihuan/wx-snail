@@ -73,7 +73,7 @@ nvm use 10.0.0
 
 ## 2-3 原生小程序 - 项目 app.json 配置
 
-* rpx: 微信自带 css 单位
+* [app.json配置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
 
 ## 2-4 原生小程序 - 自带组件及 API
 
