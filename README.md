@@ -349,6 +349,6 @@ alter table books add column count init default 0;
 * **comment.vue**
 * **server/components/commentlist.js**
 
-## 10-2: book list
+## 10-2 图书列表
 
 ## 10-3: book list back-end fix

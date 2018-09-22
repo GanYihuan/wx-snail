@@ -36,9 +36,11 @@ export default {
 	},
 	methods: {
 		init() {
+      // [showNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html)
 			wx.showNavigationBarLoading()
 			this.getComments()
-			this.getBooks()
+      this.getBooks()
+      // [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html)
 			wx.hideNavigationBarLoading()
 		},
 		async getBooks() {
@@ -53,12 +55,14 @@ export default {
 			})
 			this.comments = comments.list
 		}
-	},
+  },
+  // 下拉刷新
 	onPullDownRefresh() {
 		console.log('下拉刷新')
 		this.init()
 		wx.stopPullDownRefresh()
-	},
+  },
+  // 显示的时候
 	onShow() {
 		if (!this.userinfo.openId) {
 			let userinfo = wx.getStorageSync('userinfo')
