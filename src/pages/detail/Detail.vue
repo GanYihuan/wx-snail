@@ -3,7 +3,8 @@
     <BookInfo :info='info'></BookInfo>
     <CommentList :comments="comments"></CommentList>
     <div class="comment" v-if="showAdd">
-      <textarea 
+      <!-- [textarea](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html) -->
+      <textarea
         class='textarea'
         v-model='comment'
         :maxlength='100'
@@ -11,6 +12,7 @@
 			></textarea>
       <div class='location'>
         地理位置：
+        <!-- [switch](https://developers.weixin.qq.com/miniprogram/dev/component/switch.html) -->
         <switch color='#EA5A49' :checked='location' @change='getGeo'></switch>
         <span class='text-primary'>{{location}}</span>
       </div>
@@ -140,8 +142,9 @@ export default {
 			}
 		},
 		getPhone(e) {
-			console.log('手机型号获取种')
+			console.log('手机型号获取中')
 			if (e.target.value) {
+        // [getSystemInfoSync](https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfoSync.html)
 				const phoneInfo = wx.getSystemInfoSync()
 				// console.log(phoneInfo)
 				this.phone = phoneInfo.model
@@ -158,10 +161,10 @@ export default {
 .comment {
 	margin-top: 10px;
 	.textarea {
+		padding: 10rpx;
 		width: 730rpx;
 		height: 200rpx;
 		background: #eee;
-		padding: 10rpx;
 	}
 	.location {
 		margin-top: 10px;

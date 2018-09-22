@@ -310,7 +310,7 @@ alter table books add column count init default 0;
 
 ## 9-4 图书tag和简介显示
 
-## 9-5: get phone
+## 9-5 评论手机型号的获取
 
 ## 9-6: get Location
 
