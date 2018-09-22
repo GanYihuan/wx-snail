@@ -308,7 +308,7 @@ alter table books add column count init default 0;
 
 ## 9-3 图书作者评分显示
 
-## 9-4: book tags, summary
+## 9-4 图书tag和简介显示
 
 ## 9-5: get phone
 

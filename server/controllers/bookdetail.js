@@ -5,6 +5,7 @@ module.exports = async ctx => {
   /* first: 数据是数组, 返回第一个元素 */
   // 添加微信名和头像要链表查询 .join
   // .first() 第一条
+  // where('id', id) id: 传入的 id
   const detail = await mysql('books')
     .select('books.*', 'cSessionInfo.user_info')
     .join('cSessionInfo', 'books.openid', 'cSessionInfo.open_id')

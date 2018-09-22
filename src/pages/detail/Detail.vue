@@ -99,7 +99,8 @@ export default {
 		},
 		async getDetail() {
 			const info = await get('/weapp/bookdetail', { id: this.bookid })
-			wx.setNavigationBarTitle({
+      // [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html)
+      wx.setNavigationBarTitle({
 				title: info.title
 			})
 			this.info = info
