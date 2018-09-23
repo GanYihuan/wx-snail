@@ -175,11 +175,13 @@ qcloudSecretKey: 'Bb2V8oAb5iP90z16EObp7RD516EOauBT',
 ```
 
 ```console
-<!-- refresh console -->
+<!-- refresh node -->
 npm install consolemon
 npm install nodemon -g
 brew install mysql
+<!-- 开启 mysql -->
 mysql.server start
+<!-- -p 加密码 -->
 mysql -u root
 <!-- cAuth: **server/config.js** 里面定义的 -->
 mysql> create database cAuth;
