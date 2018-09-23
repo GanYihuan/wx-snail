@@ -1,5 +1,6 @@
 ﻿<template>
   <div class='container'>
+    <p>{{userInfo.openId}}</p>
     <div class='userInfo' @click='login'>
       <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
       <p>{{userInfo.nickName}}</p>
@@ -74,55 +75,49 @@ export default {
 		login() {
 			/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
 			/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
+			// let user = wx.getStorageSync('userInfo')
+			// if (!user) {
+			// 	qcloud.setLoginUrl(config.loginUrl)
+			// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
+			// 	/* 修复方法: 将其写入 Me.vue 中 */
+			// 	qcloud.login({
+			// 		success: userInfo => {
+			// 			console.log('登录成功', userInfo)
+			// 			showSuccess('登录成功')
+			//       /* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
+			//       /* 有 openId 但是没返回, 采取下面部分的写法才能获取 */
+			// 			wx.setStorageSync('userInfo', userInfo)
+			// 			this.userInfo = userInfo
+			// 		},
+			// 		fail: err => {
+			// 			console.log('登录失败', err)
+			// 		}
+			// 	})
+			// }
 			let user = wx.getStorageSync('userInfo')
 			const self = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
-				/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
-				/* 修复方法: 将其写入 Me.vue 中 */
 				qcloud.login({
 					success: function(userInfo) {
 						console.log('登录成功', userInfo)
 						showSuccess('登录成功')
-						/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-						wx.setStorageSync('userInfo', userInfo)
-						self.userInfo = userInfo
+						qcloud.request({
+							url: config.userUrl,
+							login: true,
+							success(userRes) {
+								console.log(userRes)
+								showSuccess('登录成功')
+								wx.setStorageSync('userInfo', userRes.data.data)
+								self.userInfo = userRes.data.data
+							}
+						})
 					},
 					fail: function(err) {
 						console.log('登录失败', err)
 					}
 				})
 			}
-
-			/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
-			/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
-			// let user = wx.getStorageSync('userInfo')
-			// const that = this
-			// if (!user) {
-			// 	qcloud.setLoginUrl(config.loginUrl)
-			// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
-			// 	/* 修复方法: 将其写入 Me.vue 中 */
-			// 	qcloud.login({
-			// 		success: function(userInfo) {
-			// 			console.log('登录成功', userInfo)
-			// 			showSuccess('登录成功')
-			// 			qcloud.request({
-			// 				url: config.userUrl,
-			// 				login: true,
-			// 				success(userRes) {
-			// 					console.log(userRes)
-			// 					showSuccess('登录成功')
-			// 					/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-			// 					wx.setStorageSync('userInfo', userRes.data.data)
-			// 					that.userInfo = userRes.data.data
-			// 				}
-			// 			})
-			// 		},
-			// 		fail: function(err) {
-			// 			console.log('登录失败', err)
-			// 		}
-			// 	})
-			// }
 		}
 	},
 	/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
