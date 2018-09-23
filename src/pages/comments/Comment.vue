@@ -4,14 +4,16 @@
       v-if='userinfo.openId'
       type='user'
       :comments="comments"
-    ></CommentList>
+    >
+    </CommentList>
     <div v-if='userinfo.openId'>
       <div class="page-title">我的图书</div>
       <Pic
         v-for='book in books'
         :key='book.id'
         :book='book'
-      ></Pic>
+      >
+      </Pic>
       <div v-if='!books.length'>暂时还没添加过书，快去添加几本把</div>
     </div>
   </div>
@@ -34,13 +36,29 @@ export default {
 			userinfo: {}
 		}
 	},
+	/* 下拉刷新 */
+	onPullDownRefresh() {
+		console.log('下拉刷新')
+		this.init()
+		wx.stopPullDownRefresh()
+	},
+	/* 显示的时候 */
+	onShow() {
+		if (!this.userinfo.openId) {
+			let userinfo = wx.getStorageSync('userinfo')
+			if (userinfo) {
+				this.userinfo = userinfo
+				this.init()
+			}
+		}
+	},
 	methods: {
 		init() {
-			// [showNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html)
+			/* [showNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.showNavigationBarLoading.html) */
 			wx.showNavigationBarLoading()
 			this.getComments()
 			this.getBooks()
-			// [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html)
+			/* [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html) */
 			wx.hideNavigationBarLoading()
 		},
 		async getBooks() {
@@ -54,22 +72,6 @@ export default {
 				openid: this.userinfo.openId
 			})
 			this.comments = comments.list
-		}
-	},
-	// 下拉刷新
-	onPullDownRefresh() {
-		console.log('下拉刷新')
-		this.init()
-		wx.stopPullDownRefresh()
-	},
-	// 显示的时候
-	onShow() {
-		if (!this.userinfo.openId) {
-			let userinfo = wx.getStorageSync('userinfo')
-			if (userinfo) {
-				this.userinfo = userinfo
-				this.init()
-			}
 		}
 	}
 }

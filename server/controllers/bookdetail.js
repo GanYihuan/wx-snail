@@ -3,17 +3,15 @@ const { mysql } = require('../qcloud')
 module.exports = async ctx => {
   const { id } = ctx.request.query
   /* first: 数据是数组, 返回第一个元素 */
-  // 添加微信名和头像要链表查询 .join
-  // .first() 第一条
-  // where('id', id) id: 传入的 id
+  /* 添加微信名和头像要联表查询 .join */
+  /* where('id', id) id: 传入的 id */
   const detail = await mysql('books')
     .select('books.*', 'cSessionInfo.user_info')
     .join('cSessionInfo', 'books.openid', 'cSessionInfo.open_id')
     .where('id', id)
     .first()
   const info = JSON.parse(detail.user_info)
-
-  // 返回
+  /* 返回 */
   ctx.state.data = Object.assign({}, detail, {
     tags: detail.tags.split(','),
     summary: detail.summary.split('\n'),
@@ -22,8 +20,7 @@ module.exports = async ctx => {
       image: info.avatarUrl
     }
   })
-
-  // increment: 累加
+  /* increment: 累加 */
   await mysql('books')
     .where('id', id)
     .increment('count', 1)

@@ -56,11 +56,11 @@ export default {
 	},
 	mounted() {
 		/* this.$root.$mp.query: 获取页面的组件 */
-		// [this.$root.$mp.query.id](http://mpvue.com/mpvue/#_18)
+		/* [this.$root.$mp.query.id](http://mpvue.com/mpvue/#_18) */
 		this.bookid = this.$root.$mp.query.id
 		this.getDetail()
 		this.getComments()
-		// [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html)
+		/* [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 		const userinfo = wx.getStorageSync('userinfo')
 		console.log('userinfo', userinfo)
 		if (userinfo) {
@@ -68,13 +68,13 @@ export default {
 		}
 	},
 	computed: {
-		// 是否显示添加的表单
+		/* 是否显示添加的表单 */
 		showAdd() {
-			// 没登录
+			/* 没登录 */
 			if (!this.userinfo.openId) {
 				return false
 			}
-			// 评论页面里查到有自己的 openid
+			/* 评论页面里查到有自己的 openid */
 			if (this.comments.filter(v => v.openid === this.userinfo.openId).length) {
 				return false
 			}
@@ -86,7 +86,7 @@ export default {
 			if (!this.comment) {
 				return
 			}
-			// 评论内容 手机型号 地理位置 图书id 用户的openid
+			/* 评论内容 手机型号 地理位置 图书id 用户的openid */
 			const data = {
 				openid: this.userinfo.openId,
 				bookid: this.bookid,
@@ -104,7 +104,7 @@ export default {
 		},
 		async getDetail() {
 			const info = await get('/weapp/bookdetail', { id: this.bookid })
-			// [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html)
+			/* [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html) */
 			wx.setNavigationBarTitle({
 				title: info.title
 			})
@@ -116,12 +116,12 @@ export default {
 			this.comments = comments.list || []
 		},
 		getGeo(e) {
-			// [百度地图 api 访问应用（AK）](http://lbsyun.baidu.com/apiconsole/key)
+			/* [百度地图 api 访问应用（AK）](http://lbsyun.baidu.com/apiconsole/key) */
 			const ak = 'rsKejfyowllq0dD0IjLbqUaFHiqMlU4Y'
-			// [逆地理编码](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding-abroad)
+			/* [逆地理编码](http://lbsyun.baidu.com/index.php?title=webapi/guide/webservice-geocoding-abroad) */
 			let url = 'http://api.map.baidu.com/geocoder/v2/'
 			if (e.target.value) {
-				// [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html)
+				/* [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html) */
 				wx.getLocation({
 					success: geo => {
 						wx.request({
@@ -150,12 +150,12 @@ export default {
 		getPhone(e) {
 			console.log('手机型号获取中')
 			if (e.target.value) {
-				// [getSystemInfoSync](https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfoSync.html)
+				/* [getSystemInfoSync](https://developers.weixin.qq.com/miniprogram/dev/api/system/system-info/wx.getSystemInfoSync.html) */
 				const phoneInfo = wx.getSystemInfoSync()
 				// console.log(phoneInfo)
 				this.phone = phoneInfo.model
 			} else {
-				// 没选中
+				/* 没选中 */
 				this.phone = ''
 			}
 		}
