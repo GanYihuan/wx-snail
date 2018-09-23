@@ -4,7 +4,7 @@
 //     fn()
 //   },1000)
 // }
-// 1 callbacl 回调地狱
+/* callback 回调地狱 */
 // ajax(()=>{
 //   console.log('执行结束')
 //   ajax(()=>{
@@ -16,7 +16,6 @@
 //   })
 // })
 
-// 1. callback
 function delay(word) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -24,7 +23,26 @@ function delay(word) {
     }, 2000)
   })
 }
-// async+await一起使用, 替代下面的 delay 回调
+
+// delay('孙悟空')
+//   .then(word => {
+//     console.log(word)
+//     return delay('猪八戒')
+//   })
+//   .then(word => {
+//     console.log(word)
+//     return delay('沙悟净')
+//   })
+//   .then(word => {
+//     console.log(word)
+//   })
+// // .catch() {}
+
+/**
+ * async+await一起使用, 替代上面的 delay 回调
+ * async: 定义一个函数
+ * await: 等待一个异步执行结束, 必须在 async 里面
+ */
 async function start() {
   const word1 = await delay('孙悟空')
   console.log(word1)
@@ -34,16 +52,3 @@ async function start() {
   console.log(word3)
 }
 start()
-
-// delay('孙悟空')
-//   .then((word)=>{
-//     console.log(word)
-//     return delay('猪八戒')
-//   })
-//   .then((word)=>{
-//     console.log(word)
-//     return delay('沙悟净')
-//   })
-//   .then((word)=>{
-//     console.log(word)
-//   })
