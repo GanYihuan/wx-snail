@@ -34,9 +34,9 @@ tnpm start
 
 按照[小程序创建资源配置指引](https://github.com/tencentyun/weapp-doc)进行操作，可以得到运行本示例所需的资源和服务，其中包括已部署好的示例代码及自动下发的 SDK 配置文件 `/etc/qcloud/sdk.config`。
 
-- 示例代码部署目录：`/data/release/node-weapp-demo`
-- 运行示例的 Node 版本：`v8.1.0`
-- Node 进程管理工具：`pm2`
+* 示例代码部署目录：`/data/release/node-weapp-demo`
+* 运行示例的 Node 版本：`v8.1.0`
+* Node 进程管理工具：`pm2`
 
 ## 项目结构
 
@@ -61,6 +61,7 @@ koa-weapp-demo
 └── routes
     └── index.js
 ```
+
 `app.js` 是 Demo 的主入口文件，Demo 使用 Koa 框架，在 `app.js` 创建一个 Koa 实例并响应请求。
 
 `routes/index.js` 是 Demo 的路由定义文件
@@ -104,7 +105,7 @@ koa-weapp-demo
     pass: '',
     char: 'utf8'
   },
-  
+
   // COS 配置，用于上传模块使用
   cos: {
     /**

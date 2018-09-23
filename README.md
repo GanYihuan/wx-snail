@@ -141,8 +141,7 @@ npm run dev
 
 ## 5-1 腾讯云后台
 
-* [腾讯云 server 下载](https://github.com/tencentyun/wafer2-quickstart-consolejs) **server**
-
+* [腾讯云 server 下载](https://github.com/tencentyun/wafer2-quickstart-nodejs)
 * **project.config.json**
 
 ```js
