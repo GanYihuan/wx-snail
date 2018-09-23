@@ -106,15 +106,18 @@ nvm use 10.0.0
 * 需要为小程序单独开发代码，不能和 web 系统重用
 * 开发效率和学习成本（小程序特有的语法）
 
+## 2-6 ES6常用语法
+
 ## 3-7 mpvue 入门 01
 
-* 安装 mpvue
+* [mpvue](https://github.com/Meituan-Dianping/mpvue)
+* mpvue: 使用 vue.js 开发小程序的前端框架
 
 ```console
 cnpm install vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
 <!-- 输入 wxabcaad13aeed9229 -->
-cnpm install
+npm install
 npm run dev
 ```
 
