@@ -350,7 +350,8 @@ CREATE TABLE books (
 
 ## 8-7 图书访问次数统计
 
-* **app.json** 在 app.json 的 page 路由按一级、二级的顺序向下排列显示。
+* **server/components/bookdetail.js**
+* **app.json** 在 app.json 的 page 路由按一级、二级的顺序向下排列显示
 
 ```json
 "pages": [
@@ -363,8 +364,6 @@ CREATE TABLE books (
 ```console
 alter table books add column count init default 0;
 ```
-
-* **server/components/bookdetail.js**
 
 ## 8-8 排行榜轮播图数据获取
 

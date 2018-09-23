@@ -5,7 +5,7 @@ module.exports = async ctx => {
     .select('id', 'title', 'image', 'count')
     .orderBy('count', 'desc')
     .limit(9)
-  // 返回
+  /* 返回 */
   ctx.state.data = {
     list: top
   }
