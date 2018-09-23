@@ -1,5 +1,6 @@
 ﻿const Koa = require('koa')
 const app = new Koa()
+const koaLog = require('./koa-logger')
 
 function delay() {
   return new Promise((resolve, reject) => {
@@ -15,10 +16,11 @@ function delay() {
 // app: 启动应用
 // app.use: 是一个中间件
 
+app.use(koaLog)
+
 // 135642
 app.use(async (ctx, next) => {
   ctx.body = '1'
-  // next middleware
   await next()
   ctx.body += '2'
 })
