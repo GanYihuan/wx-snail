@@ -97,15 +97,15 @@ export default {
 				qcloud.login({
 					success: userInfo => {
 						console.log('登录成功', userInfo)
-						showSuccess('登录成功')
+						// showSuccess('登录成功')
 						qcloud.request({
 							url: config.userUrl,
 							login: true,
 							success: userRes => {
 								console.log(userRes)
-								showSuccess('登录成功')
 								wx.setStorageSync('userInfo', userRes.data.data)
 								this.userInfo = userRes.data.data
+								showSuccess('登录成功')
 							}
 						})
 					},
