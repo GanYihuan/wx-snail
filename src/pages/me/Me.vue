@@ -1,7 +1,7 @@
 ﻿<template>
   <div class='container'>
-    <p>{{userInfo.openId}}</p>
-    <div class='userInfo' @click='login'>
+    <!-- <p>{{userInfo.openId}}</p> -->
+    <div class='userInfo'>
       <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
       <p>{{userInfo.nickName}}</p>
     </div>
@@ -19,9 +19,7 @@
 		<button
       class='btn'
       v-else
-      open-type='getuserInfo'
-      lang='zh_CN'
-      @getuserInfo='login'
+      @click='login'
     >
       点击登录
     </button>
@@ -42,11 +40,10 @@ export default {
 		return {
 			userInfo: {
 				avatarUrl: '../../../static/img/unlogin.png',
-				nickName: '点击登录'
+				nickName: '未登录'
 			}
 		}
 	},
-	/* 要注释掉 */
 	// created() {
 	// 	this.userInfo = wx.getStorageSync('userInfo')
 	// 	console.log(this.userInfo)
@@ -95,25 +92,24 @@ export default {
 			// 	})
 			// }
 			let user = wx.getStorageSync('userInfo')
-			const self = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
 				qcloud.login({
-					success: function(userInfo) {
+					success: userInfo => {
 						console.log('登录成功', userInfo)
 						showSuccess('登录成功')
 						qcloud.request({
 							url: config.userUrl,
 							login: true,
-							success(userRes) {
+							success: userRes => {
 								console.log(userRes)
 								showSuccess('登录成功')
 								wx.setStorageSync('userInfo', userRes.data.data)
-								self.userInfo = userRes.data.data
+								this.userInfo = userRes.data.data
 							}
 						})
 					},
-					fail: function(err) {
+					fail: err => {
 						console.log('登录失败', err)
 					}
 				})
