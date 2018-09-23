@@ -274,15 +274,18 @@ mysql> select * from test;
 ## 7-1 图书录入功能 - mysql 使用
 
 ```console
+<!-- 启动 mysql -->
 mysql.server start
+<!-- -p 密码 -->
 mysql -u root
-show databases;
-use cAuth;
-show tables;
-desc cSeesionInfo;
-select * from cSessionInfo;
-select create-time, open_id from cSessionInfo;
-drop table test;
+<!-- mysql 操作 -->
+mysql> show databases;
+mysql> use cAuth;
+mysql> show tables;
+mysql> desc cSeesionInfo;
+mysql> select * from cSessionInfo;
+mysql> select create-time, open_id from cSessionInfo;
+mysql> drop table test;
 ```
 
 ## 7-2 图书录入功能-获取豆瓣图书信息接口

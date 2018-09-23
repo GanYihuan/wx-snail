@@ -5,22 +5,11 @@
       <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
       <p>{{userInfo.nickName}}</p>
     </div>
-		<!-- <open-data class='multi-hp-avatar' type='userAvatarUrl'></open-data> -->
-		<!-- <open-data class='multi-hp-nickname' type='userNickName'></open-data> -->
     <YearProgress></YearProgress>
-    <button
-      class='btn'
-      v-if='userInfo.openId'
-      @click='scanBook'
-    >
+    <button class='btn' v-if='userInfo.openId' @click='scanBook'>
       添加图书
     </button>
-    <!-- @getuserInfo='login': 没调用 login() -->
-		<button
-      class='btn'
-      v-else
-      @click='login'
-    >
+		<button class='btn' v-else @click='login'>
       点击登录
     </button>
   </div>
@@ -48,8 +37,16 @@ export default {
 	// 	this.userInfo = wx.getStorageSync('userInfo')
 	// 	console.log(this.userInfo)
 	// },
+	/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
+	onShow() {
+		let userInfo = wx.getStorageSync('userInfo')
+		// console.log([userInfo])
+		if (userInfo) {
+			this.userInfo = userInfo
+		}
+		// console.log(this.userInfo)
+	},
 	methods: {
-		/* 扫码 */
 		scanBook() {
 			/* [scanCode](https://developers.weixin.qq.com/miniprogram/dev/api/device/scan/wx.scanCode.html) */
 			wx.scanCode({
@@ -115,15 +112,6 @@ export default {
 				})
 			}
 		}
-	},
-	/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
-	onShow() {
-		let userInfo = wx.getStorageSync('userInfo')
-		// console.log([userInfo])
-		if (userInfo) {
-			this.userInfo = userInfo
-		}
-		// console.log(this.userInfo)
 	}
 }
 </script>
