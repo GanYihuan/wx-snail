@@ -2,7 +2,7 @@
   <a :href="detailUrl">
     <div class="book-card">
       <div class="thumb" @click.stop="preview">
-				<!-- mode: wechat document -->
+				<!-- [mode](https://developers.weixin.qq.com/miniprogram/dev/component/image.html) -->
         <img class="img" :src="book.image" mode="aspectFit"/>
       </div>
       <div class="detail">
