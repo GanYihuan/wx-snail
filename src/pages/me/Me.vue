@@ -57,7 +57,9 @@ export default {
 					}
 				}
 			})
-		},
+    },
+    /* isbn: 书的编号 */
+    /* 发请求, async 封装 */
 		async addBook(isbn) {
 			console.log(isbn)
 			const res = await post('/weapp/addbook', {

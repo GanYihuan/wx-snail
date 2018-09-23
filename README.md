@@ -288,18 +288,17 @@ mysql> select create-time, open_id from cSessionInfo;
 mysql> drop table test;
 ```
 
-## 7-2 图书录入功能-获取豆瓣图书信息接口
+## 7-2, 7-3 图书录入功能-获取豆瓣图书信息接口
 
 * **server/route/index.js**
 * **server/controllers/addbook.js**
 
-## 7-3 图书录入功能-获取豆瓣图书信息接口 2
-
 ## 7-4 图书录入功能-mysql 新建图书表结构
 
-* **server/tools/snail.db**
+* **server/tools/snail.sql**
 
 ```console
+mysql>
 CREATE TABLE books (
   id int(11) NOT NULL AUTO_INCREMENT,
   isbn varchar(20) NOT NULL,

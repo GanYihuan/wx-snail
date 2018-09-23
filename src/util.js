@@ -1,8 +1,8 @@
-// 工具函数库
+/* 工具函数库 */
 
 import config from './config'
 
-// http get工具函数 获取数据
+/* http get 工具函数 获取数据 */
 export function get(url, data) {
   return request(url, 'GET', data)
 }
