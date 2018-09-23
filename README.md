@@ -225,7 +225,7 @@ npm run lint
 
 ## 6-1 个人中心开发-用户信息获取+展示
 
-> 小程序客户端腾讯云增强 SDK, 会话服务
+> 小程序客户端腾讯云增强 SDK, 会话服务 [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/)
 > SCSS
 
 ```console
@@ -248,10 +248,11 @@ npm run dev
 <!-- 启动 mysql -->
 mysql.server start
 mysql -u root
-<!-- mysql: -->
+<!-- 执行 wafer2-client-sdk 可以查看数据库里面保存的获取用户信息 -->
 mysql> use cAuth;
 mysql> show tables;
 mysql> select * from cSessionInfo;
+<!-- mysql 基础操作  -->
 mysql> create database woniu;
 mysql> create table test(id int, name varchar(100));
 mysql> show tables;

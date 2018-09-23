@@ -44,6 +44,11 @@ export default {
 			}
 		}
 	},
+	// 要注释掉
+	created() {
+    this.userInfo = wx.getStorageSync('userInfo')
+    console.log(this.userInfo)
+	},
 	methods: {
 		/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
 		onShow() {
@@ -60,6 +65,7 @@ export default {
 			wx.scanCode({
 				success: res => {
 					if (res.result) {
+						// console.log(res)
 						this.addBook(res.result)
 					}
 				}
@@ -77,7 +83,7 @@ export default {
 			/* 登录可以获取用户信息 */
 			/* 获取缓存数据 */
 			let user = wx.getStorageSync('userInfo')
-			const self = this
+			const that = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
 				qcloud.login({
@@ -89,7 +95,7 @@ export default {
 								showSuccess('登录成功')
 								/* 数据缓存 */
 								wx.setStorageSync('userInfo', userRes.data.data)
-								self.userInfo = userRes.data.data
+								that.userInfo = userRes.data.data
 							}
 						})
 					},
