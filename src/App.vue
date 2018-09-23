@@ -5,8 +5,8 @@
 
 export default {
 	async created() {
-		/* 发起网络请求 */
-		/* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉 */
+    /* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉 */
+		/* wx.request: 发起网络请求, util 替代下面 */
 		// wx.request({
 		// 	url: (config.host = '/weapp/demo'),
 		// 	success: function(res) {
@@ -14,7 +14,7 @@ export default {
 		// 	}
 		// })
 
-		/* util.js/request 替代上面的网络请求 */
+		/* **util.js/request** 替代上面的网络请求 */
 		// const res = await get('/weapp/demo')
 		// console.log(123, res)
 		console.log('小程序启动了')

@@ -14,6 +14,7 @@ export function post(url, data) {
 /* 发起网络请求 */
 function request(url, method, data, header = {}) {
   return new Promise((resolve, reject) => {
+    /* wx.request: 微信自带 API, 发起网络请求 */
     wx.request({
       data,
       method,
@@ -23,6 +24,7 @@ function request(url, method, data, header = {}) {
         if (res.data.code === 0) {
           resolve(res.data.data)
         } else {
+          /* showModal: 微信自带 API */
           showModal('失败', res.data.data.msg)
           reject(res.data)
         }
