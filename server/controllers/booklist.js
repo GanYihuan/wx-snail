@@ -35,6 +35,7 @@ module.exports = async ctx => {
     books = await mysqlSelect.where('books.openid', openid)
   } else {
     /* 全部图书 分页 */
+    /* offset: 设置长度 */
     books = await mysqlSelect.limit(size).offset(Number(page) * size)
   }
   /* 返回 */

@@ -70,12 +70,12 @@ export default {
 				console.log('没有更多数据', this.more)
 			}
 			if (init) {
-        /* list: 查看 data */
+				/* list: 查看 data */
 				this.books = books.list
 				/* [stopPullDownRefresh](https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.stopPullDownRefresh.html) */
 				wx.stopPullDownRefresh()
 			} else {
-				/* 下拉刷新，不能直接覆盖books 而是累加 */
+				/* 下拉刷新，不能直接覆盖 books 而是累加 */
 				this.books = this.books.concat(books.list)
 			}
 			/* [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html) */
