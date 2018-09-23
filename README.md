@@ -153,6 +153,9 @@ npm run dev
 
 ## 5-2 腾讯云后台代码介绍
 
+* **server/routes/index.js**
+* **server/controllers/demo.js**
+
 ## 5-3 腾讯云后台本地开发环境搭建
 
 * **server/config.js**
