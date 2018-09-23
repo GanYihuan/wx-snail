@@ -267,6 +267,8 @@ mysql> select * from test;
 
 ## 6-4 个人中心-登录逻辑完善
 
+* **pages/Me.vue/login()**
+
 ## 6-5 个人中心-代码完善-eslint 格式化代码
 
 ## 7-1 图书录入功能 - mysql 使用
