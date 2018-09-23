@@ -20,7 +20,15 @@ app.use(koaLog)
 
 // 135642
 app.use(async (ctx, next) => {
-  ctx.body = '1'
+  console.log(ctx)
+  // **router.js** 替代下面
+  if (ctx.request.url === '/sun') {
+    ctx.body = '孙悟空'
+  } else if (ctx.request.url === '/zhu') {
+    ctx.body = '猪八戒'
+  } else {
+    ctx.body = '1'
+  }
   await next()
   ctx.body += '2'
 })
