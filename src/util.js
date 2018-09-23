@@ -24,7 +24,7 @@ function request(url, method, data, header = {}) {
         if (res.data.code === 0) {
           resolve(res.data.data)
         } else {
-          /* showModal: 微信自带 API */
+          /* [showModal](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html) */
           showModal('失败', res.data.data.msg)
           reject(res.data)
         }
@@ -34,6 +34,7 @@ function request(url, method, data, header = {}) {
 }
 
 export function showModal(title, content) {
+  /* [showModal](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html) */
   wx.showModal({
     title,
     content,
@@ -42,6 +43,7 @@ export function showModal(title, content) {
 }
 
 export function showSuccess(text) {
+  /* [showToast](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html) */
   wx.showToast({
     title: text,
     icon: 'success'

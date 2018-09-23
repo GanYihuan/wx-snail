@@ -20,7 +20,7 @@ export default {
 		console.log('小程序启动了')
 
 		/* 登录可以获取用户信息 */
-		/* 获取缓存数据 */
+		/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 		// let user = wx.getStorageSync('userInfo')
 		// if (!user) {
 		// 	qcloud.setLoginUrl(config.loginUrl)
@@ -28,7 +28,7 @@ export default {
 		// 		success: function(userInfo) {
 		// 			console.log('login success!', userInfo)
 		// 			showSuccess('login success!')
-		// /* 数据缓存 */
+		// /* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
 		// 			wx.setStorageSync('userInfo', userInfo)
 		// 		},
 		// 		fail: function(err) {
@@ -50,33 +50,32 @@ export default {
 
 <style>
 .text-footer {
+	margin-bottom: 5px;
 	text-align: center;
 	font-size: 12px;
-	margin-bottom: 5px;
 }
 .text-primary {
 	color: #ea5149;
 }
 .page-title {
 	padding-left: 20px;
-	background: #eee;
 	line-height: 40px;
 	font-size: 14px;
+	background: #eee;
 }
 .right {
 	float: right;
 }
 .btn {
-	color: white;
-	background: #ea5a49;
 	margin-bottom: 10px;
 	padding-left: 15px;
-	padding-left: 15px;
 	border-radius: 2px;
-	font-size: 16px;
-	line-height: 40px;
-	height: 40px;
 	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: white;
+	background: #ea5a49;
 }
 .btn:active {
 	background: #fa5a49;

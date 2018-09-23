@@ -5,8 +5,14 @@
 ## 程序运行
 
 ```console
-<!-- 开启数据库 -->
+<!-- 管理 node 版本 -->
+npm i nvm
+nvm install 10.0.0
+nvm use 10.0.0
+<!-- 开启数据库 mysql -->
+brew install mysql
 mysql.server start
+<!-- -p 加密码 -->
 mysql -u root
 <!-- 运行后端服务器 -->
 cd server
@@ -14,11 +20,11 @@ nvm use 10.0.0
 npm run dev
 <!-- 运行程序 -->
 cd imooc-snail
-node -v
 nvm use 10.0.0
 npm run dev
 <!-- 打开微信开发者工具 -->
 选择 imooc-snail
+输入: [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
 ```
 
 ## Build Setup
@@ -42,17 +48,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * user: m15012856094@163.com
 * wxc9686cc036184c63 (读书的蜗牛 小程序)
 * wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
-
-> 管理 node 版本
-
-```console
-npm i nvm
-nvm ls
-<!-- nvm install 8.11.1 -->
-nvm install 10.0.0
-<!-- nvm use 8.11.1 -->
-nvm use 10.0.0
-```
 
 ## 2-1 小程序帐号和开发工具
 
@@ -108,13 +103,15 @@ nvm use 10.0.0
 
 ## 2-6 ES6 常用语法
 
+* 省略跳过不学
+
 ## 3-7 mpvue 入门 01
 
 * [mpvue](https://github.com/Meituan-Dianping/mpvue)
 * mpvue: 使用 vue.js 开发小程序的前端框架
 
 ```console
-cnpm install vue -g
+npm install vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
 <!-- 输入 wxabcaad13aeed9229 -->
 npm install
@@ -122,6 +119,8 @@ npm run dev
 ```
 
 ## 3-8 mpvue 入门 02 todolist 迁移
+
+* 省略跳过不学
 
 ## 4-1 koa 入门+中间件入门
 
@@ -246,16 +245,17 @@ npm run dev
 > 数据库操作
 
 ```console
+<!-- 启动 mysql -->
 mysql.server start
 mysql -u root
 <!-- mysql: -->
-use cAuth
-show tables;
-select * from cSessionInfo;
-create database woniu;
-create table test(id int, name varchar(100));
-show tables;
-select * from test;
+mysql> use cAuth;
+mysql> show tables;
+mysql> select * from cSessionInfo;
+mysql> create database woniu;
+mysql> create table test(id int, name varchar(100));
+mysql> show tables;
+mysql> select * from test;
 ```
 
 ## 6-2 个人中心-扫码功能开发
