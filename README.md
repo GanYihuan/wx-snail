@@ -212,10 +212,14 @@ npm run dev
 
 ## 5-10 使用 ESLint 自动规范代码
 
-* npm run lint **package.json**
+* **package.json**
 
 ```json
 "lint": "eslint --ext .js,.vue src"
+```
+
+```console
+npm run lint
 ```
 
 <!-- eslint-disable -->
