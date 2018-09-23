@@ -371,6 +371,8 @@ alter table books add column count init default 0;
 
 ## 8-9 排行榜轮播图实现
 
+* **components/TopSwiper.vue**
+
 ## 9-1 获取图书详情，修改标题显示
 
 * **server/components/bookdetail.js**

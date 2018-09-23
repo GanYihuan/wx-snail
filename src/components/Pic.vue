@@ -50,6 +50,7 @@ export default {
 	},
 	methods: {
 		preview() {
+      /* [previewImage](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html) */
 			wx.previewImage({
 				current: this.book.image,
 				urls: [this.book.image]
