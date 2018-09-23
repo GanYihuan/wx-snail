@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// [vue-tiny-rate](https://github.com/shengxinjing/vue-tiny-rate)
+/* [vue-tiny-rate](https://github.com/shengxinjing/vue-tiny-rate) */
 export default {
 	props: {
 		value: {
@@ -26,12 +26,12 @@ export default {
 
 <style lang='scss'>
 .rate {
-	position: relative;
 	display: inline-block;
+	position: relative;
 	.hollow {
-		position: absolute;
-		overflow: hidden;
 		display: inline-block;
+		overflow: hidden;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 0;
