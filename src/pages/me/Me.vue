@@ -1,6 +1,6 @@
 ﻿<template>
   <div class='container'>
-    <div class='userInfo'>
+    <div class='userInfo' @click='login'>
       <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
       <p>{{userInfo.nickName}}</p>
     </div>
@@ -14,6 +14,7 @@
     >
       添加图书
     </button>
+    <!-- @getuserInfo='login': 没调用 login() -->
 		<button
       class='btn'
       v-else
@@ -28,9 +29,9 @@
 
 <script>
 import qcloud from 'wafer2-client-sdk'
-import YearProgress from '@/components/YearProgress'
 import { showSuccess, post, showModal } from '@/util'
 import config from '@/config'
+import YearProgress from '@/components/YearProgress'
 
 export default {
 	components: {
@@ -40,25 +41,16 @@ export default {
 		return {
 			userInfo: {
 				avatarUrl: '../../../static/img/unlogin.png',
-				nickName: ''
+				nickName: '点击登录'
 			}
 		}
 	},
 	/* 要注释掉 */
-	created() {
-    this.userInfo = wx.getStorageSync('userInfo')
-    console.log(this.userInfo)
-	},
+	// created() {
+	// 	this.userInfo = wx.getStorageSync('userInfo')
+	// 	console.log(this.userInfo)
+	// },
 	methods: {
-		/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
-		onShow() {
-			let userInfo = wx.getStorageSync('userInfo')
-			// console.log([userInfo])
-			if (userInfo) {
-				this.userInfo = userInfo
-			}
-			// console.log(this.userInfo)
-		},
 		/* 扫码 */
 		scanBook() {
 			/* [scanCode](https://developers.weixin.qq.com/miniprogram/dev/api/device/scan/wx.scanCode.html) */
@@ -80,31 +72,67 @@ export default {
 			showModal('添加成功', `${res.title}添加成功`)
 		},
 		login() {
-			/* 登录可以获取用户信息 */
-			/* 获取缓存数据 */
+			/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+			/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 			let user = wx.getStorageSync('userInfo')
-			const that = this
+			const self = this
 			if (!user) {
 				qcloud.setLoginUrl(config.loginUrl)
+				/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
+				/* 修复方法: 将其写入 Me.vue 中 */
 				qcloud.login({
 					success: function(userInfo) {
-						qcloud.request({
-							url: config.userUrl,
-							login: true,
-							success(userRes) {
-								showSuccess('登录成功')
-								/* 数据缓存 */
-								wx.setStorageSync('userInfo', userRes.data.data)
-								that.userInfo = userRes.data.data
-							}
-						})
+						console.log('登录成功', userInfo)
+						showSuccess('登录成功')
+						/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
+						wx.setStorageSync('userInfo', userInfo)
+						self.userInfo = userInfo
 					},
 					fail: function(err) {
 						console.log('登录失败', err)
 					}
 				})
 			}
+
+			/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+			/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
+			// let user = wx.getStorageSync('userInfo')
+			// const that = this
+			// if (!user) {
+			// 	qcloud.setLoginUrl(config.loginUrl)
+			// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
+			// 	/* 修复方法: 将其写入 Me.vue 中 */
+			// 	qcloud.login({
+			// 		success: function(userInfo) {
+			// 			console.log('登录成功', userInfo)
+			// 			showSuccess('登录成功')
+			// 			qcloud.request({
+			// 				url: config.userUrl,
+			// 				login: true,
+			// 				success(userRes) {
+			// 					console.log(userRes)
+			// 					showSuccess('登录成功')
+			// 					/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
+			// 					wx.setStorageSync('userInfo', userRes.data.data)
+			// 					that.userInfo = userRes.data.data
+			// 				}
+			// 			})
+			// 		},
+			// 		fail: function(err) {
+			// 			console.log('登录失败', err)
+			// 		}
+			// 	})
+			// }
 		}
+	},
+	/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
+	onShow() {
+		let userInfo = wx.getStorageSync('userInfo')
+		// console.log([userInfo])
+		if (userInfo) {
+			this.userInfo = userInfo
+		}
+		// console.log(this.userInfo)
 	}
 }
 </script>

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/me/main",
     "pages/books/main",
     "pages/detail/main",
-    "pages/me/main",
     "pages/comments/main"
   ],
   "window": {

@@ -1,8 +1,8 @@
 <script>
 // import { showSuccess, get } from './util'
-import { showSuccess } from './util'
-import qcloud from 'wafer2-client-sdk'
-import config from './config'
+// import { showSuccess } from './util'
+// import qcloud from 'wafer2-client-sdk'
+// import config from './config'
 
 export default {
 	async created() {
@@ -32,23 +32,25 @@ export default {
 		// 	}
 		// })
 
-    /* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+		/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
 		/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
-		let user = wx.getStorageSync('userInfo')
-		if (!user) {
-			qcloud.setLoginUrl(config.loginUrl)
-			qcloud.login({
-				success: function(userInfo) {
-					console.log('登录成功', userInfo)
-					showSuccess('登录成功')
-					/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-					wx.setStorageSync('userInfo', userInfo)
-				},
-				fail: function(err) {
-					console.log('登录失败', err)
-				}
-			})
-		}
+		// let user = wx.getStorageSync('userInfo')
+		// if (!user) {
+		// 	qcloud.setLoginUrl(config.loginUrl)
+		// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
+		// 	/* 修复方法: 将其写入 Me.vue 中 */
+		// 	qcloud.login({
+		// 		success: function(userInfo) {
+		// 			console.log('登录成功', userInfo)
+		// 			showSuccess('登录成功')
+		// 			/* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
+		// 			wx.setStorageSync('userInfo', userInfo)
+		// 		},
+		// 		fail: function(err) {
+		// 			console.log('登录失败', err)
+		// 		}
+		// 	})
+		// }
 	}
 
 	// created() {
