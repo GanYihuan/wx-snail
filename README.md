@@ -202,6 +202,9 @@ npm run dev
 
 ## 5-5, 5-6, 5-7 项目初始化页面-底部导航
 
+* 静态图片 **static/img**
+* **app.json** [页面设置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE)
+
 ## 5-8 代码封装
 
 * **util.js** **config.js**

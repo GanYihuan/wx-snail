@@ -7,14 +7,14 @@
 		<!-- <open-data class='multi-hp-avatar' type='userAvatarUrl'></open-data> -->
 		<!-- <open-data class='multi-hp-nickname' type='userNickName'></open-data> -->
     <YearProgress></YearProgress>
-    <button 
+    <button
       v-if='userInfo.openId'
       class='btn'
       @click='scanBook'
     >
       添加图书
     </button>
-		<button 
+		<button
       v-else
       open-type='getuserInfo'
       lang='zh_CN'
@@ -22,7 +22,7 @@
       @getuserInfo='login'
     >
       点击登录
-    </button> 
+    </button>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
 		},
 		/* 扫码 */
 		scanBook() {
-      /* 扫码 */
+			/* 扫码 */
 			wx.scanCode({
 				success: res => {
 					if (res.result) {
@@ -74,7 +74,7 @@ export default {
 			showModal('添加成功', `${res.title}添加成功`)
 		},
 		login() {
-      /* 登录可以获取用户信息 */
+			/* 登录可以获取用户信息 */
 			/* 获取缓存数据 */
 			let user = wx.getStorageSync('userInfo')
 			const self = this
@@ -86,8 +86,8 @@ export default {
 							url: config.userUrl,
 							login: true,
 							success(userRes) {
-                showSuccess('登录成功')
-                /* 数据缓存 */
+								showSuccess('登录成功')
+								/* 数据缓存 */
 								wx.setStorageSync('userInfo', userRes.data.data)
 								self.userInfo = userRes.data.data
 							}
@@ -99,8 +99,8 @@ export default {
 				})
 			}
 		}
-  },
-  /* 跳转到该页面就自动执行 */
+	},
+	/* 跳转到该页面就自动执行 */
 	onShow() {
 		// console.log(123)
 		let userInfo = wx.getStorageSync('userInfo')
