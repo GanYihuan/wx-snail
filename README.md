@@ -263,6 +263,8 @@ mysql> select * from test;
 
 ## 6-3 个人中心-今年过了多少天组件
 
+* **components/YearProgress.vue**
+
 ## 6-4 个人中心-登录逻辑完善
 
 ## 6-5 个人中心-代码完善-eslint 格式化代码

@@ -1,5 +1,6 @@
 ﻿<template>
   <div class="progressbar">
+    <!-- [progress](https://developers.weixin.qq.com/miniprogram/dev/component/progress.html) -->
     <progress :percent='percent' activeColor='#EA5A49'></progress>
     <p>{{year}}已经过去了{{days}}天，{{percent}}%</p>
   </div>
@@ -45,10 +46,10 @@ export default {
 
 <style lang='scss'>
 .progressbar {
-	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 40px;
 	width: 100%;
+	text-align: center;
 	progress {
 		margin-bottom: 10px;
 	}

@@ -44,7 +44,7 @@ export default {
 			}
 		}
 	},
-	// 要注释掉
+	/* 要注释掉 */
 	created() {
     this.userInfo = wx.getStorageSync('userInfo')
     console.log(this.userInfo)
