@@ -9,11 +9,16 @@ function delay() {
   })
 }
 
-// Onion model
+// Onion model: **洋葱模型.png**
+// ctx: 封装了 request response 的上下文
+// next: 下一个中间件
+// app: 启动应用
+// app.use: 是一个中间件
+
 // 135642
 app.use(async (ctx, next) => {
   ctx.body = '1'
-  // Next middleware
+  // next middleware
   await next()
   ctx.body += '2'
 })
