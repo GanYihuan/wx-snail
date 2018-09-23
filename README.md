@@ -319,10 +319,8 @@ CREATE TABLE books (
 
 ## 7-5 图书录入功能-添加图书功能完成
 
-```console
-select title from books;
-```
-
+* mysql 数据库修改 **server/config.js**
+* **server/controllers/addbook.js**
 * **util.js**
 
 ## 8-1 图书列表页获取数据

@@ -1,11 +1,14 @@
 const https = require('https')
+/* mysql 数据库修改 **server/config.js** */
 const { mysql } = require('../qcloud')
 
-// 新增图书
-// 1. 获取豆瓣信息
-// [获取豆瓣信息 无法访问](https://developers.douban.com/wiki/?title=book_v2#get_isbn_book)
-// [数据](https://api.douban.com/v2/book/isbn/9787536692930)
-// 2. 入库
+/**
+ * 新增图书
+ * [获取豆瓣信息 无法访问](https://developers.douban.com/wiki/?title=book_v2#get_isbn_book)
+ * [数据](https://api.douban.com/v2/book/isbn/9787536692930)
+ * 2. 入库
+ * @param {*} ctx
+ */
 module.exports = async ctx => {
   /* post 请求在 body 字段里面 */
   const { isbn, openid } = ctx.request.body
@@ -47,6 +50,7 @@ module.exports = async ctx => {
       author
     })
     try {
+      /* 数据入 mysql 库 */
       await mysql('books').insert({
         isbn,
         openid,
@@ -66,6 +70,7 @@ module.exports = async ctx => {
       }
     } catch (e) {
       ctx.state = {
+        /* 0: 正确, -1: 错误 */
         code: -1,
         data: {
           msg: '新增失败:' + e.sqlMessage
