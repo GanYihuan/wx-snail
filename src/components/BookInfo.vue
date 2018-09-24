@@ -85,9 +85,9 @@ export default {
 	}
 	.thumb {
 		position: relative;
-		overflow: hidden;
 		width: 750rpx;
 		height: 500rpx;
+		overflow: hidden;
 		.back {
 			width: 100%;
 			filter: blur(15px);
@@ -105,7 +105,7 @@ export default {
 			top: 330rpx;
 			width: 100%;
 			text-align: center;
-			color: white;
+			color: #fff;
 			.title {
 				font-size: 20px;
 			}
