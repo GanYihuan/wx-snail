@@ -27,6 +27,9 @@ npm run dev
 输入: [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
 ```
 
+> cSessionInfo: 数据库里面保存的获取用户信息
+> books: 图书表结构
+
 ## Build Setup
 
 ```bash

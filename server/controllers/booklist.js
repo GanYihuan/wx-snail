@@ -2,11 +2,13 @@ const { mysql } = require('../qcloud')
 
 /* [data](http://localhost:5757/weapp/booklist) */
 module.exports = async ctx => {
+  /* .select('*') 默认是一个表 */
   // const books = await mysql('books').select('*')
   // ctx.state.data = {
   //   list: books
   // }
 
+  /* JSON.parse() 字符串转换为 js 对象 */
   // const books = await mysql('books')
   //   .select('books.*', 'cSessionInfo.user_info')
   //   .join('cSessionInfo', 'books.openid', 'cSessionInfo.open_id')
