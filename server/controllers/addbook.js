@@ -11,6 +11,7 @@ const { mysql } = require('../qcloud')
  */
 module.exports = async ctx => {
   /* post 请求在 body 字段里面 */
+  /* 前端发过来的 isbn, openid */
   const { isbn, openid } = ctx.request.body
   console.log('添加图书', isbn, openid)
   if (isbn && openid) {
