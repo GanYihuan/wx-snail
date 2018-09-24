@@ -347,6 +347,7 @@ CREATE TABLE books (
 
 ## 8-5 下拉刷新功能的实现
 
+* **books/main.js**
 * **Book.vue**
 
 ## 8-6 图书滚动加载功能实现
