@@ -62,11 +62,11 @@ export default {
 
 <style lang='scss' scoped>
 .book-card {
-	overflow: hidden;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 5px;
 	font-size: 14px;
+	overflow: hidden;
 	.thumb {
 		float: left;
 		overflow: hidden;

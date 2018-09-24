@@ -24,17 +24,17 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .rate {
 	display: inline-block;
 	position: relative;
 	.hollow {
 		display: inline-block;
-		overflow: hidden;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 0;
+		overflow: hidden;
 	}
 }
 </style>
