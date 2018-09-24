@@ -7,9 +7,10 @@
       <textarea
         class='textarea'
         v-model='comment'
-        :maxlength='100'
         placeholder='请输入图书短评'
-			></textarea>
+        :maxlength='100'
+			>
+      </textarea>
       <div class='location'>
         地理位置：
         <!-- [switch](https://developers.weixin.qq.com/miniprogram/dev/component/switch.html) -->
