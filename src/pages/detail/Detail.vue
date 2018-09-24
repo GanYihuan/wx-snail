@@ -125,6 +125,7 @@ export default {
 				/* [getLocation](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getLocation.html) */
 				wx.getLocation({
 					success: geo => {
+            // console.log(geo)
 						wx.request({
 							url,
 							data: {
