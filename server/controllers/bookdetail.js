@@ -1,6 +1,7 @@
 const { mysql } = require('../qcloud')
 
 module.exports = async ctx => {
+  /* 前端发过来的 id */
   const { id } = ctx.request.query
   /* first: 数据是数组, 返回第一个元素 */
   /* 添加微信名和头像要联表查询 .join */

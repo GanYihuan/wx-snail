@@ -24,6 +24,7 @@ module.exports = async ctx => {
   //   })
   // }
 
+  /* 前端发过来的 page, openid */
   const { page, openid } = ctx.request.query
   const size = 10
   /* 添加微信名和头像要链表查询 .join */

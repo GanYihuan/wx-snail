@@ -369,7 +369,7 @@ CREATE TABLE books (
 ```
 
 ```console
-alter table books add column count init default 0;
+mysql> alter table books add column count init default 0;
 ```
 
 ## 8-8 排行榜轮播图数据获取
