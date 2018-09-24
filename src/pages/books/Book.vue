@@ -77,7 +77,7 @@ export default {
 				/* [stopPullDownRefresh](https://developers.weixin.qq.com/miniprogram/dev/api/ui/pull-down-refresh/wx.stopPullDownRefresh.html) */
 				wx.stopPullDownRefresh()
 			} else {
-				/* 下拉刷新，不能直接覆盖 books 而是累加 */
+				/* 下拉刷新, 不能直接覆盖 books 而是累加 */
 				this.books = this.books.concat(books.list)
 			}
 			/* [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html) */

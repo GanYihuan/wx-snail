@@ -29,6 +29,7 @@ npm run dev
 
 > cSessionInfo: 数据库里面保存的获取用户信息
 > books: 图书表结构
+> [data](http://localhost:5757/weapp/booklist)
 
 ## Build Setup
 
@@ -351,6 +352,8 @@ CREATE TABLE books (
 * **Book.vue**
 
 ## 8-6 图书滚动加载功能实现
+
+* **Book.vue**
 
 ## 8-7 图书访问次数统计
 
