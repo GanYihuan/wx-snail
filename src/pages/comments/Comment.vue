@@ -1,12 +1,12 @@
 ﻿<template>
   <div class="container">
     <CommentList
-      v-if='userinfo.openId'
+      v-if='userInfo.openId'
       type='user'
       :comments="comments"
     >
     </CommentList>
-    <div v-if='userinfo.openId'>
+    <div v-if='userInfo.openId'>
       <div class="page-title">我的图书</div>
       <Pic
         v-for='book in books'
@@ -33,7 +33,7 @@ export default {
 		return {
 			comments: [],
 			books: [],
-			userinfo: {}
+			userInfo: {}
 		}
 	},
 	/* 下拉刷新 */
@@ -44,10 +44,10 @@ export default {
 	},
 	/* 显示的时候 */
 	onShow() {
-		if (!this.userinfo.openId) {
-			let userinfo = wx.getStorageSync('userinfo')
-			if (userinfo) {
-				this.userinfo = userinfo
+		if (!this.userInfo.openId) {
+			let userInfo = wx.getStorageSync('userInfo')
+			if (userInfo) {
+				this.userInfo = userInfo
 				this.init()
 			}
 		}
@@ -63,13 +63,13 @@ export default {
 		},
 		async getBooks() {
 			const books = await get('/weapp/booklist', {
-				openid: this.userinfo.openId
+				openid: this.userInfo.openId
 			})
 			this.books = books.list
 		},
 		async getComments() {
 			const comments = await get('/weapp/commentlist', {
-				openid: this.userinfo.openId
+				openid: this.userInfo.openId
 			})
 			this.comments = comments.list
 		}
