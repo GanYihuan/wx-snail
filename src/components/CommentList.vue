@@ -51,8 +51,8 @@ export default {
 
 <style lang='scss'>
 .comment-list {
-	background: #eee;
 	font-size: 14px;
+	background: #eee;
 	.comment {
 		margin-bottom: 10px;
 		padding: 5px 20px;
@@ -64,9 +64,9 @@ export default {
 			.inline {
 				display: inline;
 				.avatar {
+					border-radius: 50%;
 					width: 20px;
 					height: 20px;
-					border-radius: 50%;
 				}
 			}
 		}
