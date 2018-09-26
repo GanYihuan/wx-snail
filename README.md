@@ -169,10 +169,10 @@ npm install koa-router -S
 
 ## 5-3 腾讯云后台本地开发环境搭建
 
-* **server/config.js**
 * [本地搭建微信小程序的开发环境](https://cloud.tencent.com/developer/ask/25171)
 * [Secretid/SecretKey](https://console.qcloud.com/cam/capi)
 * [账号信息 APPID](https://console.qcloud.com/developer)
+* **server/config.js**
 
 ```js
 // --- 改三个 start ---
@@ -187,7 +187,6 @@ qcloudSecretKey: 'Bb2V8oAb5iP90z16EObp7RD516EOauBT',
 
 ```console
 <!-- refresh node -->
-npm install consolemon
 npm install nodemon -g
 brew install mysql
 <!-- 开启 mysql -->
