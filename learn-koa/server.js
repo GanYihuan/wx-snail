@@ -10,6 +10,8 @@ function delay() {
   })
 }
 
+// async: 定义一个函数
+// await: 等待一个异步执行结束, 必须在 async 里面
 // Onion model: **洋葱模型.png**
 // ctx: 封装了 request response 的上下文
 // next: 下一个中间件
@@ -17,7 +19,6 @@ function delay() {
 // app.use: 是一个中间件
 
 app.use(koaLog)
-
 // 135642
 app.use(async (ctx, next) => {
   console.log(ctx)

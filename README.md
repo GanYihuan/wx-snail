@@ -117,7 +117,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ```console
 npm install vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
-<!-- 输入 wxabcaad13aeed9229 -->
+<!-- 输入 APPID: wxabcaad13aeed9229 -->
 npm install
 npm run dev
 ```
@@ -129,6 +129,10 @@ npm run dev
 ## 4-1 koa 入门+中间件入门
 
 * **learn-koa/server.js**
+
+```console
+npm install koa -S
+```
 
 ## 4-2 async+await 优雅处理异步
 
