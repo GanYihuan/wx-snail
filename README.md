@@ -146,6 +146,10 @@ npm install koa -S
 
 * **learn-koa/router.js**
 
+```console
+npm install koa-router -S
+```
+
 ## 5-1 腾讯云后台
 
 * [腾讯云 server 下载](https://github.com/tencentyun/wafer2-quickstart-nodejs)

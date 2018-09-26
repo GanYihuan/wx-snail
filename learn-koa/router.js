@@ -12,6 +12,7 @@ router.get('/zhu', (ctx, next) => {
 })
 
 app.use(koaLog)
-app.use(router.routes()).use(router.allowedMethods())
+app.use(router.routes())
+   .use(router.allowedMethods())
 
 app.listen(3000)
