@@ -98,6 +98,7 @@ export default {
 						console.log('登录成功', userInfo)
 						// showSuccess('登录成功')
 						qcloud.request({
+              /* server/route/index.js */
 							url: config.userUrl,
 							login: true,
 							success: userRes => {
