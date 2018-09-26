@@ -55,11 +55,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## 2-1 小程序帐号和开发工具
 
-* [后台地址](https://mp.weixin.qq.com/) -> 立即注册 -> 小程序 -> 登录
+* [后台地址](https://mp.weixin.qq.com/) -> 立即注册 -> 小程序 -> 填信息 -> 登录
 * [小程序信息填写](https://mp.weixin.qq.com/wxopen/initprofile?action=home&lang=zh_CN&token=1921737503)
-* 设置 -> 开发设置 -> [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN) -> 开发者工具 -> 腾讯云开通
+* 设置 -> 开发设置 -> [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN) -> 首页/开发者工具 -> 腾讯云开通
 * [文档地址](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)
-* [开发工具下载地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html) -> AppID
+* [开发工具下载地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
 * **app.json** 修改小程序外观
 
 ## 2-2 原生小程序 - 项目目录结构
