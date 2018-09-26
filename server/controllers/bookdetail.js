@@ -11,6 +11,7 @@ module.exports = async ctx => {
     .join('cSessionInfo', 'books.openid', 'cSessionInfo.open_id')
     .where('id', id)
     .first()
+  console.log(detail)
   const info = JSON.parse(detail.user_info)
   /* 返回 */
   ctx.state.data = Object.assign({}, detail, {
