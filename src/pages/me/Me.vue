@@ -61,7 +61,8 @@ export default {
     /* isbn: 书的编号 */
     /* 发请求, async 封装 */
 		async addBook(isbn) {
-			console.log(isbn)
+      console.log(isbn)
+      /* 传递给 server */
 			const res = await post('/weapp/addbook', {
 				isbn,
 				openid: this.userInfo.openId

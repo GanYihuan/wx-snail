@@ -15,6 +15,7 @@ module.exports = async ctx => {
   const { isbn, openid } = ctx.request.body
   console.log('添加图书', isbn, openid)
   if (isbn && openid) {
+    /* 防止重复添加图书 */
     const findRes = await mysql('books')
       .select()
       .where('isbn', isbn)
@@ -29,10 +30,11 @@ module.exports = async ctx => {
     }
     let url = 'https://api.douban.com/v2/book/isbn/' + isbn
     console.log(url)
+    /* 下载内容 */
     const bookinfo = await getJSON(url)
     const rate = bookinfo.rating.average
     const { title, image, alt, publisher, summary, price } = bookinfo
-    // tag: 科幻 1000, 小说 500, ...
+    // 变成-> tag: "科幻 1000, 小说 500, ..."
     const tags = bookinfo.tags
       .map(v => {
         return `${v.title} ${v.count}`
@@ -51,7 +53,8 @@ module.exports = async ctx => {
       author
     })
     try {
-      /* 数据入 mysql 库 */
+      /* 数据插入 mysql 库 */
+      /* insert 要写 try catch */
       await mysql('books').insert({
         isbn,
         openid,
