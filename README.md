@@ -220,6 +220,8 @@ npm run dev
 * **util.js** **config.js**
 * 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉
 
+## 5-9 章节回顾
+
 ## 5-10 使用 ESLint 自动规范代码
 
 * **package.json**
