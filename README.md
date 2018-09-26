@@ -238,7 +238,7 @@ npm run lint
 
 ## 6-1 个人中心开发-用户信息获取+展示
 
-> 小程序客户端腾讯云增强 SDK, 会话服务 [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/)
+> 小程序客户端腾讯云增强 SDK, 会话服务 [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) **App.vue** 获取用户信息后数据会储存到数据库里 cSessionInfo
 > SCSS
 
 ```console
@@ -273,6 +273,8 @@ mysql> select * from test;
 ```
 
 ## 6-2 个人中心-扫码功能开发
+
+* **pages/Me.vue**
 
 ## 6-3 个人中心-今年过了多少天组件
 

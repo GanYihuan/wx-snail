@@ -20,7 +20,8 @@ export default {
 		// console.log(123, res)
 		console.log('小程序启动了')
 
-		/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+    /* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+    /* 获取用户信息后数据会储存到数据库里 cSessionInfo */
 		/* 设置登录地址 */
 		// qcloud.setLoginUrl(config.loginUrl)
 		// qcloud.login({
