@@ -68,7 +68,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * 微信开发者工具 -> 快速启动模板
 * .wxss: 类似 .css, 多了 rpx 单位, 有利于各个平台适配
 * wx. 是微信自带 API
-* **小程序生命周期.png** vue.js 生命周期取代
+* **static/02-小程序生命周期.png** vue.js 生命周期取代
 
 ## 2-3 原生小程序 - 项目 app.json 配置
 
