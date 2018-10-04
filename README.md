@@ -77,6 +77,10 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## 2-4 原生小程序 - 自带组件及 API
 
 * [开发 API](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html)
+* wx.request 发送请求
+* wx.previewImage 预览图片
+* wx.setStorage|getStorage 本地缓存
+* navigateor, redirectTo, switchTab
 
 ## 2-5 原生小程序 - 语法缺点
 
