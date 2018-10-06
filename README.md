@@ -225,26 +225,20 @@ npm run lint
 
 ## 6-1 个人中心开发-用户信息获取+展示
 
-> 小程序客户端腾讯云增强 SDK, 会话服务 [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) **App.vue** 获取用户信息后数据会储存到数据库里 cSessionInfo
-> SCSS
+* 小程序客户端腾讯云增强 SDK, 会话服务 [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/)
+* **App.vue** 获取用户信息后数据会储存到数据库里 cSessionInfo
 
 ```console
 npm install wafer2-client-sdk -S
 npm install sass-loader node-sass -D
 ```
 
-> 数据库初始化
-
 ```console
+<!-- 数据库初始化 -->
 cd server
 npm install
 node tools/initdb.js
 npm run dev
-```
-
-> 数据库操作
-
-```console
 <!-- 启动 mysql -->
 mysql.server start
 mysql -u root
@@ -267,11 +261,9 @@ mysql> select * from test;
 
 * **components/YearProgress.vue**
 
-## 6-4 个人中心-登录逻辑完善
+## 6-4, 6-5 个人中心-登录逻辑完善
 
 * **pages/Me.vue/login()**
-
-## 6-5 个人中心-代码完善-eslint 格式化代码
 
 ## 7-1 图书录入功能 - mysql 使用
 

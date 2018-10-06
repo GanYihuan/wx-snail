@@ -70,18 +70,16 @@ export default {
 			showModal('添加成功', `${res.title}添加成功`)
 		},
 		login() {
-			/* [获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
-			/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
+			/* [qcloud 获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
+			/* [getStorageSync 获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 			// let user = wx.getStorageSync('userInfo')
 			// if (!user) {
 			// 	qcloud.setLoginUrl(config.loginUrl)
-			// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
-			// 	/* 修复方法: 将其写入 Me.vue 中 */
 			// 	qcloud.login({
 			// 		success: userInfo => {
 			// 			console.log('登录成功', userInfo)
 			// 			showSuccess('登录成功')
-			//       /* [数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
+			//       /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
 			//       /* 有 openId 但是没返回, 采取下面部分的写法才能获取 */
 			// 			wx.setStorageSync('userInfo', userInfo)
 			// 			this.userInfo = userInfo
@@ -99,7 +97,7 @@ export default {
 						console.log('登录成功', userInfo)
 						// showSuccess('登录成功')
 						qcloud.request({
-              /* server/route/index.js */
+              /* server/route/index.js 用户信息接口 */
 							url: config.userUrl,
 							login: true,
 							success: userRes => {

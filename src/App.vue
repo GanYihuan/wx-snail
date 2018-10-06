@@ -38,7 +38,7 @@ export default {
 		// let user = wx.getStorageSync('userInfo')
 		// if (!user) {
 		// 	qcloud.setLoginUrl(config.loginUrl)
-		// 	/* login 是 async, 一旦跳转到 Me.vue/onShow 调用 getStorageSync(), 由于 async, 没执行到下面的 setStorageSync(), 出问题 */
+		// 	/* login 是 async, 刚开始会跳转到 Me.vue/onShow 调用 getStorageSync(), 由于没执行到下面的 setStorageSync(), 出问题 */
 		// 	/* 修复方法: 将其写入 Me.vue 中 */
 		// 	qcloud.login({
 		// 		success: function(userInfo) {
