@@ -39,7 +39,7 @@ function delay(word) {
 // // .catch() {}
 
 /**
- * async+await一起使用, 替代上面的 delay 回调
+ * async+await 一起使用, 替代上面的 delay 回调
  * async: 定义一个函数
  * await: 等待一个异步执行结束, 必须在 async 里面
  */

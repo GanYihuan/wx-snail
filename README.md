@@ -104,7 +104,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * 不能使用 npm
 * 需要为小程序单独开发代码，不能和 web 系统重用
 
-## 3-7 mpvue 入门 01
+## 3-7 mpvue 入门
 
 * [mpvue](https://github.com/Meituan-Dianping/mpvue)
 * mpvue: 使用 vue.js 开发小程序的前端框架
@@ -118,11 +118,7 @@ npm install
 npm run dev
 ```
 
-## 3-8 mpvue 入门 02 todolist 迁移
-
-* 省略跳过不学
-
-## 4-1 koa 入门+中间件入门
+## 4-1, 4-2, koa 入门+中间件入门, async+await 处理异步
 
 * **learn-koa/server.js**
 
@@ -130,16 +126,13 @@ npm run dev
 npm install koa -S
 ```
 
-## 4-2 async+await 优雅处理异步
-
-* **learn-koa/server.js**
-
 ## 4-3 自己实现 koa-logger 中间件，打印所有请求的耗时
 
 * **learn-koa/koa-logger.js**
 
-## 4-4, 4-5 koa-router 入门
+## 4-4, 4-5, koa 路由, koa-router 入门
 
+* **learn-koa/server.js**
 * **learn-koa/router.js**
 
 ```console
