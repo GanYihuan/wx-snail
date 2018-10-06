@@ -1,5 +1,4 @@
 /* 工具函数库 */
-
 import config from './config'
 
 /* http get 工具函数 获取数据 */

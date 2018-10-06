@@ -148,7 +148,7 @@ npm install koa-router -S
 "qcloudRoot": "server/",
 ```
 
-* 首次上传将除‘智能上传’外全勾上上传, 第二次上传选‘智能上传’
+* upload -> 首次上传将除‘智能上传’外全勾上上传, 第二次上传选‘智能上传’
 * 开通腾讯云
 
 ## 5-2 腾讯云后台代码介绍
@@ -197,8 +197,6 @@ npm run dev
 
 * [运行测试 demo](http://localhost:5757/weapp/demo)
 
-## 5-4: 原型图
-
 ## 5-5, 5-6, 5-7 项目初始化页面-底部导航
 
 * **static/img**
@@ -206,10 +204,10 @@ npm run dev
 
 ## 5-8 代码封装
 
-* **util.js** **config.js**
+* **util.js**
+* **config.js**
+* **App.vue**
 * 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉
-
-## 5-9 章节回顾
 
 ## 5-10 使用 ESLint 自动规范代码
 
