@@ -389,7 +389,7 @@ mysql> alter table books add column count init default 0;
 ## 9-6 获取地理位置（使用小程序 API 和百度地图 API）
 
 * **Detail.vue**
-* 百度地图使用
+* 百度地图使用, 转换经纬度为固定数值
 
 ## 9-7 点击评论发起请求
 
