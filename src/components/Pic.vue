@@ -13,7 +13,7 @@
           <div class="left">
             {{book.title}}
           </div>
-        </div>
+        </div> 
         <div class="row">
           <div class="right text-primary">
             浏览量:{{book.count}}

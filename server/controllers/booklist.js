@@ -35,12 +35,15 @@ module.exports = async ctx => {
   let books
   if (openid) {
     /* 根据 opid 过滤 */
-    books = await mysqlSelect.where('books.openid', openid)
+    books = await mysqlSelect
+              .where('books.openid', openid)
   } else {
     /* 全部图书 分页 */
     /* offset: 起点 */
     /* limit: 长度 */
-    books = await mysqlSelect.limit(size).offset(Number(page) * size)
+    books = await mysqlSelect
+              .limit(size)
+              .offset(Number(page) * size)
   }
   /* 返回 */
   ctx.state.data = {
