@@ -51,13 +51,13 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 * user: m15012856094@163.com
 * wxc9686cc036184c63 (读书的蜗牛 小程序)
-* wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
+* wxabcaad13aeed9229 (蜗牛图书 小程序)
 
 ## 2-1 小程序帐号和开发工具
 
-* [后台地址](https://mp.weixin.qq.com/) -> 立即注册 -> 小程序 -> 填信息 -> 登录
-* [小程序信息填写](https://mp.weixin.qq.com/wxopen/initprofile?action=home&lang=zh_CN&token=1921737503)
-* 设置 -> 开发设置 -> [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN) -> 首页/开发者工具 -> 腾讯云开通
+* [小程序后台](https://mp.weixin.qq.com/)
+* 设置 -> 开发设置 -> [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
+* 设置 -> 第三方服务 -> 腾讯云开通
 * [文档地址](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)
 * [开发工具下载地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
 * **app.json** 修改小程序外观
@@ -77,24 +77,20 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## 2-4 原生小程序 - 自带组件及 API
 
 * [开发 API](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html)
-* wx.request 发送请求
-* wx.previewImage 预览图片
-* wx.setStorage|getStorage 本地缓存
-* navigateor, redirectTo, switchTab
 
 ## 2-5 原生小程序 - 语法缺点
 
-> API
+> 开发 API
 
 * Wx.request 发送请求
 * Wx.previewImage 预览图片
 * Wx.setStorage|getStorage 本地存储
+* 页面导航 navigateTo, redirectTo, switchTab
 * Location 地理位置
 * ScanCode 扫码
 * showToast 显示提示信息
 * 设置导航条
 * 获取用户信息
-* 页面导航 navigateTo, redirectTo, switchTab
 * 动画、振动、截屏，亮度
 * 音乐、视频、地图、文件
 * 加速计 罗盘 wifi nfc 等等
@@ -105,13 +101,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 > 语法缺点
 
-* 不能使用 npm，使用第三方包的方式太原始
+* 不能使用 npm
 * 需要为小程序单独开发代码，不能和 web 系统重用
-* 开发效率和学习成本（小程序特有的语法）
-
-## 2-6 ES6 常用语法
-
-* 省略跳过不学
 
 ## 3-7 mpvue 入门 01
 
@@ -119,6 +110,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * mpvue: 使用 vue.js 开发小程序的前端框架
 
 ```console
+nvm use 10.0.0
 npm install vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
 <!-- 输入 APPID: wxabcaad13aeed9229 -->
@@ -160,7 +152,7 @@ npm install koa-router -S
 * **project.config.json**
 
 ```js
-"qcloudRoot": "./server",
+"qcloudRoot": "server/",
 ```
 
 * 首次上传将除‘智能上传’外全勾上上传, 第二次上传选‘智能上传’
