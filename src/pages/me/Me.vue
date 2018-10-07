@@ -95,7 +95,8 @@ export default {
 				qcloud.login({
 					success: userInfo => {
 						console.log('登录成功', userInfo)
-						// showSuccess('登录成功')
+            // showSuccess('登录成功')
+            /* openId 隐藏在 weapp/user 里面 */
 						qcloud.request({
               /* server/route/index.js 用户信息接口 */
 							url: config.userUrl,
