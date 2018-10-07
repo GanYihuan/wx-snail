@@ -284,6 +284,7 @@ mysql> drop table test;
 
 ## 7-2, 7-3 图书录入功能-获取豆瓣图书信息接口
 
+* **pages/me/Me.vue** 添加图书到后端
 * **server/route/index.js**
 * **server/controllers/addbook.js**
 
@@ -316,6 +317,7 @@ CREATE TABLE books (
 * mysql 数据库修改 **server/config.js**
 * **server/controllers/addbook.js**
 * **util.js**
+* 图书添加到 books 数据库中
 
 ## 8-1 图书列表页获取数据
 

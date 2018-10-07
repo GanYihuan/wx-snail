@@ -6,6 +6,7 @@
     "pages/comments/main"
   ],
   "window": {
+    "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#EA5149",
     "navigationBarTitleText": "蜗牛图书",
