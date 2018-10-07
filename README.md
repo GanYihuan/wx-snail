@@ -375,6 +375,7 @@ mysql> alter table books add column count init default 0;
 ## 9-1 获取图书详情，修改标题显示
 
 * **server/components/bookdetail.js**
+* 评论功能需要微信企业号
 
 ## 9-2 图书封面显示
 

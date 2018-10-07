@@ -10,7 +10,7 @@
         placeholder='请输入图书短评'
         :maxlength='100'
 			>
-      </textarea>
+      </textarea> 
       <div class='location'>
         地理位置：
         <!-- [switch](https://developers.weixin.qq.com/miniprogram/dev/component/switch.html) -->
