@@ -51,7 +51,7 @@ export default {
 
 <style lang='scss'>
 .swiper {
-	margin-top: 5px;
+	margin-top: 10rpx;
 	.slide-image {
 		width: 33%;
 		height: 250rpx;
