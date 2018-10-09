@@ -1,6 +1,5 @@
 ﻿<template>
   <div class='container'>
-    <!--   -->
     <div class='userInfo'>
       <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
       <p>{{userInfo.nickName}}</p>

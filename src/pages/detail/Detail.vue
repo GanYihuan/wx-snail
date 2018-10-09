@@ -10,7 +10,7 @@
         placeholder='请输入图书短评'
         :maxlength='100'
 			>
-      </textarea> 
+      </textarea>
       <div class='location'>
         地理位置：
         <!-- [switch](https://developers.weixin.qq.com/miniprogram/dev/component/switch.html) -->
@@ -63,7 +63,7 @@ export default {
 		this.getComments()
 		/* [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 		const userinfo = wx.getStorageSync('userinfo')
-		console.log('userinfo', userinfo)
+		// console.log('userinfo', userinfo)
 		if (userinfo) {
 			this.userinfo = userinfo
 		}
@@ -113,7 +113,7 @@ export default {
 		},
 		async getComments() {
 			const comments = await get('/weapp/commentlist', { bookid: this.bookid })
-			console.log('comments', comments)
+			// console.log('comments', comments)
 			this.comments = comments.list || []
 		},
 		getGeo(e) {
