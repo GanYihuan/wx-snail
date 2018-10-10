@@ -261,6 +261,7 @@ mysql> select * from test;
 ## 6-2 个人中心-扫码功能开发
 
 * **pages/Me.vue**
+* `wx.scanCode({})`
 
 ## 6-3 个人中心-今年过了多少天组件
 
