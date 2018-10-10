@@ -342,7 +342,8 @@ CREATE TABLE books (
 
 ## 8-2 图书卡片显示数据
 
-* **Pic.vue** replace **Card.vue**
+* **Pic.vue**
+* 布局
 
 ## 8-3 星级显示组件实现
 

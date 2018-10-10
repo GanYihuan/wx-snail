@@ -13,7 +13,7 @@
           <div class="left">
             {{book.title}}
           </div>
-        </div> 
+        </div>
         <div class="row">
           <div class="right text-primary">
             浏览量:{{book.count}}
@@ -62,33 +62,32 @@ export default {
 
 <style lang='scss' scoped>
 .book-card {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding: 5px;
-	font-size: 14px;
+	margin: 10rpx 0;
+	padding: 10rpx;
+	font-size: 28rpx;
 	overflow: hidden;
 	.thumb {
 		float: left;
-		overflow: hidden;
 		margin: 0 auto;
-		width: 90px;
-		height: 90px;
+		width: 180rpx;
+		height: 180rpx;
+		overflow: hidden;
 		.img {
 			max-width: 100%;
 			max-height: 100%;
 		}
 	}
 	.detail {
-		margin-left: 100px;
+		margin-left: 200rpx;
 		.row {
-			margin-bottom: 3px;
-			line-height: 20px;
+			margin-bottom: 6rpx;
+			line-height: 40rpx;
 		}
 		.right {
 			float: right;
 		}
 		.left {
-			margin-right: 80px;
+			margin-right: 160rpx;
 		}
 	}
 }
