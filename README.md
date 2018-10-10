@@ -359,6 +359,10 @@ CREATE TABLE books (
 
 * **books/main.js**
 * **Book.vue**
+* **app.json** `"enablePullDownRefresh": true,` `onPullDownRefresh()`
+* `wx.showNavigationBarLoading()`
+* `wx.stopPullDownRefresh()`
+* `wx.hideNavigationBarLoading()`
 
 ## 8-6 图书滚动加载功能实现
 
