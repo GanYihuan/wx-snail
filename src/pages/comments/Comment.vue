@@ -1,13 +1,13 @@
 ﻿<template>
-  <div class="container">
+  <div class='container'>
     <CommentList
       v-if='userInfo.openId'
       type='user'
-      :comments="comments"
+      :comments='comments'
     >
     </CommentList>
     <div v-if='userInfo.openId'>
-      <div class="page-title">我的图书</div>
+      <div class='page-title'>我的图书</div>
       <Pic
         v-for='book in books'
         :key='book.id'

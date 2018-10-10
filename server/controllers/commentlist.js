@@ -11,7 +11,7 @@ module.exports = async ctx => {
     /* 图书详情页的评论列表 */
     comments = await mysqlSelect.where('bookid', bookid)
   } else if (openid) {
-    /* 根据个人的 opid 筛选 */
+    /* 根据个人的 openid 筛选 */
     comments = await mysqlSelect.where('openid', openid)
   }
   /* 返回 */

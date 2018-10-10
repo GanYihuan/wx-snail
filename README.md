@@ -31,27 +31,8 @@ npm run dev
 > books: 图书表结构
 > [data](http://localhost:5757/weapp/booklist)
 
-## Build Setup
-
-```bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-* user: m15012856094@163.com
-* wxc9686cc036184c63 (读书的蜗牛 小程序)
-* wxabcaad13aeed9229 (蜗牛图书 小程序)
+* user: 网页邮箱
+* wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
 
 ## 2-1 小程序帐号和开发工具
 
