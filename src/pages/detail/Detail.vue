@@ -26,7 +26,7 @@
         评论
       </button>
     </div>
-    <div v-else class='text-footer'>
+    <div class='text-footer' v-else>
       未登录或者已经评论过啦
     </div>
     <!-- [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) -->
@@ -47,7 +47,7 @@ export default {
 	data() {
 		return {
 			comments: [],
-			userinfo: {},
+			userInfo: {},
 			bookid: '',
 			info: {},
 			comment: '',
@@ -62,21 +62,21 @@ export default {
 		this.getDetail()
 		this.getComments()
 		/* [getStorageSync](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
-		const userinfo = wx.getStorageSync('userinfo')
-		// console.log('userinfo', userinfo)
-		if (userinfo) {
-			this.userinfo = userinfo
+		const userInfo = wx.getStorageSync('userInfo')
+		// console.log('userInfo', userInfo)
+		if (userInfo) {
+			this.userInfo = userInfo
 		}
 	},
 	computed: {
 		/* 是否显示添加的表单 */
 		showAdd() {
 			/* 没登录 */
-			if (!this.userinfo.openId) {
+			if (!this.userInfo.openId) {
 				return false
 			}
 			/* 评论页面里查到有自己的 openid */
-			if (this.comments.filter(v => v.openid === this.userinfo.openId).length) {
+			if (this.comments.filter(v => v.openid === this.userInfo.openId).length) {
 				return false
 			}
 			return true
@@ -89,7 +89,7 @@ export default {
 			}
 			/* 评论内容 手机型号 地理位置 图书id 用户的openid */
 			const data = {
-				openid: this.userinfo.openId,
+				openid: this.userInfo.openId,
 				bookid: this.bookid,
 				comment: this.comment,
 				phone: this.phone,

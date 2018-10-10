@@ -418,6 +418,7 @@ mysql> alter table books add column count init default 0;
 ## 9-5 评论手机型号的获取
 
 * **Detail.vue**
+* `wx.getSystemInfoSync()`
 
 ## 9-6 获取地理位置（使用小程序 API 和百度地图 API）
 
