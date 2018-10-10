@@ -1,7 +1,7 @@
 ﻿<template>
   <div class='rate'>
     <span>☆☆☆☆☆</span>
-    <div class="hollow" :style='style'>
+    <div class='hollow' :style='style'>
       ★★★★★
     </div>
   </div>
