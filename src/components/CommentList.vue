@@ -1,32 +1,32 @@
 ﻿<template>
-  <div class="comment-list">
-    <div class="page-title" v-if='comments.length'>
+  <div class='comment-list'>
+    <div class='page-title' v-if='comments.length'>
       评论
     </div>
     <div
-      class="comment"
+      class='comment'
       v-for='comment in comments'
       :key='comment.id'
       @click='handleClick(comment)'
     >
-      <div class="user">
-        <div class="inline">
+      <div class='user'>
+        <div class='inline'>
           <img
-            class="avatar"
+            class='avatar'
             mode='aspectFit'
-            :src="comment.image"
+            :src='comment.image'
           >
           {{comment.title}}
         </div>
-        <div class="right">
+        <div class='right'>
           {{comment.location||'未知地点'}}
-          <span class="text-primary">
+          <span class='text-primary'>
             --
           </span>
           {{comment.phone||'未知型号'}}
         </div>
       </div>
-      <div class="content">
+      <div class='content'>
         {{comment.comment}}
       </div>
     </div>
@@ -51,22 +51,22 @@ export default {
 
 <style lang='scss'>
 .comment-list {
-	font-size: 14px;
+	font-size: 28rpx;
 	background: #eee;
 	.comment {
-		margin-bottom: 10px;
-		padding: 5px 20px;
+		margin-bottom: 20rpx;
+		padding: 10rpx 40rpx;
 		background: #fff;
 		.content {
-			margin: 10px 0;
+			margin: 20rpx 0;
 		}
 		.user {
 			.inline {
 				display: inline;
 				.avatar {
 					border-radius: 50%;
-					width: 20px;
-					height: 20px;
+					width: 40rpx;
+					height: 40rpx;
 				}
 			}
 		}

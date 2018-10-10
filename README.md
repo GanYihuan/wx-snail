@@ -432,13 +432,11 @@ mysql> alter table books add column count init default 0;
 * **server/components/addcomment.js** 添加数据到数据库中
 * **server/tools/snail.sql**
 
-## 9-9 评论列表实现
+## 9-9, 9-10, 9-11 评论列表实现, 评论模块实现
 
-* **server/components/commentlist.js**
-
-## 9-10, 9-11 评论模块实现
-
+* **server/controllers/commentlist.js**
 * **Detail.vue**
+* **src/components/CommentList.vue**
 
 ## 9-13 代码规范修正
 

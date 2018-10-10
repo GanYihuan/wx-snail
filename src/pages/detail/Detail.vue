@@ -114,7 +114,8 @@ export default {
 		},
 		async getComments() {
 			const comments = await get('/weapp/commentlist', { bookid: this.bookid })
-			// console.log('comments', comments)
+      // console.log('comments', comments)
+      /* 当 comments.list 不存在时取 [] */
 			this.comments = comments.list || []
 		},
 		getGeo(e) {
