@@ -1,8 +1,8 @@
 ﻿<template>
   <div>
     <BookInfo :info='info'></BookInfo>
-    <CommentList :comments="comments"></CommentList>
-    <div class="comment" v-if="showAdd">
+    <CommentList :comments='comments'></CommentList>
+    <div class='comment' v-if='showAdd'>
       <!-- [textarea](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html) -->
       <textarea
         class='textarea'
@@ -22,7 +22,7 @@
         <switch color='#EA5A49' :checked='phone' @change='getPhone'></switch>
         <span class='text-primary'>{{phone}}</span>
       </div>
-      <button class="btn" @click='addComment'>
+      <button class='btn' @click='addComment'>
         评论
       </button>
     </div>
@@ -30,7 +30,7 @@
       未登录或者已经评论过啦
     </div>
     <!-- [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) -->
-    <button class="btn" open-type='share'>转发给好友</button>
+    <button class='btn' open-type='share'>转发给好友</button>
   </div>
 </template>
 
@@ -104,7 +104,8 @@ export default {
 			}
 		},
 		async getDetail() {
-			const info = await get('/weapp/bookdetail', { id: this.bookid })
+      const info = await get('/weapp/bookdetail', { id: this.bookid })
+      // console.log(info)
 			/* [设置 title](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html) */
 			wx.setNavigationBarTitle({
 				title: info.title
@@ -167,7 +168,7 @@ export default {
 
 <style lang='scss'>
 .comment {
-	margin-top: 10px;
+	margin-top: 20rpx;
 	.textarea {
 		padding: 10rpx;
 		width: 730rpx;
@@ -175,12 +176,12 @@ export default {
 		background: #eee;
 	}
 	.location {
-		margin-top: 10px;
-		padding: 5px 10px;
+		margin-top: 20rpx;
+		padding: 10rpx 20rpx;
 	}
 	.phone {
-		margin-top: 10px;
-		padding: 5px 10px;
+		margin-top: 20rpx;
+		padding: 10rpx 20rpx;
 	}
 }
 </style>
