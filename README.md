@@ -353,6 +353,7 @@ CREATE TABLE books (
 ## 8-4 数据库链表查询显示添加人
 
 * **server/controllers/booklist.js**
+* mysql 连表查询
 
 ## 8-5 下拉刷新功能的实现
 
