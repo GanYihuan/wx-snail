@@ -426,13 +426,11 @@ mysql> alter table books add column count init default 0;
 * 百度地图使用, 转换经纬度为固定数值
 * `wx.getLocation()`
 
-## 9-7 点击评论发起请求
+## 9-7, 9-8 点击评论发起请求, 评论后台接口实现
 
 * **Detail.vue**
-
-## 9-8 评论后台接口实现
-
-* **server/components/addcomment.js**
+* **server/components/addcomment.js** 添加数据到数据库中
+* **server/tools/snail.sql**
 
 ## 9-9 评论列表实现
 
