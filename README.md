@@ -267,9 +267,12 @@ mysql> select * from test;
 
 * **components/YearProgress.vue**
 
-## 6-4, 6-5 个人中心-登录逻辑完善
+## 6-4, 6-5 个人中心-登录逻辑完善, eslint格式化代码
 
 * **pages/Me.vue/login()**
+* 修复 **App.vue** -> bug!
+* `wafer2-client-sdk` 应用会话功能
+* `npm run lint`
 
 ## 7-1 图书录入功能 - mysql 使用
 

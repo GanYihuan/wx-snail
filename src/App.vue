@@ -37,8 +37,9 @@ export default {
 		/* [获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
 		// let user = wx.getStorageSync('userInfo')
 		// if (!user) {
+    /* 设置登录地址 */
 		// 	qcloud.setLoginUrl(config.loginUrl)
-		// 	/* login 是 async, 刚开始会跳转到 Me.vue/onShow 调用 getStorageSync(), 由于没执行到下面的 setStorageSync(), 出问题 */
+		// 	/* bug!: login 是 async, 刚开始会跳转到 Me.vue/onShow 调用 getStorageSync(), 由于没执行到下面的 setStorageSync(), 出问题 */
 		// 	/* 修复方法: 将其写入 Me.vue 中 */
 		// 	qcloud.login({
 		// 		success: function(userInfo) {
