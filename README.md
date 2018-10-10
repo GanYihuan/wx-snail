@@ -372,16 +372,9 @@ CREATE TABLE books (
 
 ## 8-7 图书访问次数统计
 
-* **server/components/bookdetail.js**
+* 组件间传递参数
+* **server/components/bookdetail.js** 访问后累加访问次数
 * **app.json** 在 app.json 的 page 路由按一级、二级的顺序向下排列显示
-
-```json
-"pages": [
-  "pages/books/main",
-  // 二级路由必须写在一级路由下面
-  "pages/detail/main",
-],
-```
 
 ```console
 mysql> alter table books add column count init default 0;
