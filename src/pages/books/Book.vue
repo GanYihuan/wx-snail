@@ -83,7 +83,7 @@ export default {
 			/* [hideNavigationBarLoading](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideNavigationBarLoading.html) */
 			wx.hideNavigationBarLoading()
 		},
-		/* 获取排行榜 */
+		/* 获取轮播图数据 */
 		async getTop() {
 			const tops = await get('/weapp/top')
 			this.tops = tops.list

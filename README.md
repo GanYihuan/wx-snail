@@ -382,7 +382,7 @@ mysql> alter table books add column count init default 0;
 
 ## 8-8 排行榜轮播图数据获取
 
-* **server/components/top.js** 获取部分图书数据, 按照浏览数量来排序
+* **server/components/top.js** 获取部分图书数据, 按照浏览数量来排序, 作为轮播图数据
 
 ## 8-9 排行榜轮播图实现
 
