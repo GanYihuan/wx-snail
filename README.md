@@ -366,7 +366,9 @@ CREATE TABLE books (
 
 ## 8-6 图书滚动加载功能实现
 
+* **server/controllers/booklist.js**
 * **Book.vue**
+* 查询数据, qcloud 的使用, 多种情况的考虑, 逻辑强
 
 ## 8-7 图书访问次数统计
 
