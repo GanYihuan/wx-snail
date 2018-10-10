@@ -406,9 +406,14 @@ mysql> alter table books add column count init default 0;
 
 * **components/BookInfo.vue**
 * **server/controllers/bookdetail.js**
-* 数据处理
+* 后端数据分割处理
 
 ## 9-4 图书 tag 和简介显示
+
+* **components/BookInfo.vue**
+* **server/controllers/bookdetail.js**
+* 后端数据分割处理
+* css
 
 ## 9-5 评论手机型号的获取
 
