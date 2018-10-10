@@ -429,12 +429,10 @@ mysql> alter table books add column count init default 0;
 },
 ```
 
-## 10-1 个人已评论列表实现
+## 10-1, 10-2 个人已评论列表实现, 图书列表
 
 * **comment.vue**
 * **server/components/commentlist.js**
-
-## 10-2 图书列表
 
 ## 10-3 图书列表后端修改
 
