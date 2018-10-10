@@ -338,6 +338,7 @@ CREATE TABLE books (
 * **server/route/index.js**
 * **server/controllers/booklist.js**
 * **books/Book.vue**
+* 获取 books 数据库里面的内容显示在前端里面
 
 ## 8-2 图书卡片显示数据
 
