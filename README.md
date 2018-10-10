@@ -242,7 +242,7 @@ npm run dev
 <!-- 启动 mysql -->
 mysql.server start
 mysql -u root
-<!-- 执行 wafer2-client-sdk 可以查看数据库里面保存的获取用户信息 -->
+<!-- 执行 wafer2-client-sdk 查看数据库里保存的获取用户信息 -->
 mysql> use cAuth;
 mysql> show tables;
 mysql> select * from cSessionInfo;
@@ -252,6 +252,11 @@ mysql> create table test(id int, name varchar(100));
 mysql> show tables;
 mysql> select * from test;
 ```
+
+* 储存信息到缓存中 `wx.setStorageSync()`
+* 从缓存中获取储存信息 `wx.getStorageSync()`
+* 显示提示框 `wx.showToast()`
+* 显示模块框 `wx.showModal()`
 
 ## 6-2 个人中心-扫码功能开发
 

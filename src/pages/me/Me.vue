@@ -1,7 +1,7 @@
 ﻿<template>
   <div class='container'>
     <div class='userInfo'>
-      <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl">
+      <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl"/>
       <p>{{userInfo.nickName}}</p>
     </div>
     <YearProgress></YearProgress>
@@ -56,12 +56,12 @@ export default {
 					}
 				}
 			})
-    },
-    /* isbn: 书的编号 */
-    /* 发请求, async 封装 */
+		},
+		/* isbn: 书的编号 */
+		/* 发请求, async 封装 */
 		async addBook(isbn) {
-      console.log(isbn)
-      /* 传递给 server */
+			console.log(isbn)
+			/* 传递给 server */
 			const res = await post('/weapp/addbook', {
 				isbn,
 				openid: this.userInfo.openId
@@ -94,10 +94,10 @@ export default {
 				qcloud.login({
 					success: userInfo => {
 						console.log('登录成功', userInfo)
-            // showSuccess('登录成功')
-            /* openId 隐藏在 weapp/user 里面 */
+						// showSuccess('登录成功')
+						/* openId 隐藏在 weapp/user 里面 */
 						qcloud.request({
-              /* server/route/index.js 用户信息接口 */
+							/* server/route/index.js 用户信息接口 */
 							url: config.userUrl,
 							login: true,
 							success: userRes => {

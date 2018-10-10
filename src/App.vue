@@ -66,30 +66,30 @@ export default {
 
 <style>
 .text-footer {
-	margin-bottom: 5px;
+	margin-bottom: 10rpx;
 	text-align: center;
-	font-size: 12px;
+	font-size: 24rpx;
 }
 .text-primary {
 	color: #ea5149;
 }
 .page-title {
-	padding-left: 20px;
-	line-height: 40px;
-	font-size: 14px;
+	padding-left: 40rpx;
+	line-height: 80rpx;
+	font-size: 28rpx;
 	background: #eee;
 }
 .right {
 	float: right;
 }
 .btn {
-	margin-bottom: 10px;
-	padding-left: 15px;
-	border-radius: 2px;
+	margin-bottom: 20rpx;
+	padding-left: 30rpx;
+	border-radius: 4rpx;
 	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	font-size: 16px;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 32rpx;
 	color: white;
 	background: #ea5a49;
 }
