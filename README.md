@@ -327,10 +327,11 @@ CREATE TABLE books (
 
 ## 7-5 图书录入功能-添加图书功能完成
 
-* mysql 数据库修改 **server/config.js**
+* **server/config.js** mysql 数据库名称
+* **util.js** `wx.showModel()`
 * **server/controllers/addbook.js**
-* **util.js**
-* 图书添加到 books 数据库中
+* `const { mysql } = require('../qcloud')` 使用, 豆瓣图书数据添加到 books 数据库中
+* 防止重复添加图书
 
 ## 8-1 图书列表页获取数据
 
