@@ -13,12 +13,13 @@ export default {
 			return new Date().getFullYear()
 		},
 		days() {
-			let start = new Date()
+      let start = new Date()
+      /* start 是今年第一天 */
 			start.setMonth(0)
 			start.setDate(1)
-			// start 就是今年第一天
-			// 今天的时间戳 减去今年第一天的时间戳, 时间戳为毫秒
-			let offset = new Date().getTime() - start.getTime()
+      /* 今天的时间戳减去今年第一天的时间戳, 时间戳为毫秒 */
+      let offset = new Date().getTime() - start.getTime()
+      /* 毫秒 -> 秒 -> 分 -> 时 -> 天 */
 			return parseInt(offset / 1000 / 60 / 60 / 24) + 1
 		},
 		percent() {
@@ -26,7 +27,7 @@ export default {
 		}
 	},
 	methods: {
-		/* 闰年 */
+		/* 是否为闰年 */
 		isLeapYear() {
 			const year = new Date().getFullYear()
 			if (year % 400 === 0) {
@@ -46,12 +47,12 @@ export default {
 
 <style lang='scss'>
 .progressbar {
-	margin-top: 10px;
-	margin-bottom: 40px;
+	margin-top: 20rpx;
+	margin-bottom: 80rpx;
 	width: 100%;
 	text-align: center;
 	progress {
-		margin-bottom: 10px;
+		margin-bottom: 20rpx;
 	}
 }
 </style>
