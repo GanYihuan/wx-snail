@@ -400,8 +400,13 @@ mysql> alter table books add column count init default 0;
 ## 9-2 图书封面显示
 
 * **components/BookInfo.vue**
+* css
 
 ## 9-3 图书作者评分显示
+
+* **components/BookInfo.vue**
+* **server/controllers/bookdetail.js**
+* 数据处理
 
 ## 9-4 图书 tag 和简介显示
 

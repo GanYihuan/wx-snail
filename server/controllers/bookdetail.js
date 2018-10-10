@@ -12,6 +12,7 @@ module.exports = async ctx => {
     .where('id', id)
     .first()
   console.log(detail)
+  /* JSON.parse(): string 转换为 json 对象 */
   const info = JSON.parse(detail.user_info)
   /* 返回 */
   ctx.state.data = Object.assign({}, detail, {

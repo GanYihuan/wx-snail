@@ -46,6 +46,7 @@ export default {
 	props: ['info'],
 	computed: {
 		userinfo() {
+      /* .user_info: bookdetail.js */
       /* 如果不存在则为 {} */
 			return this.info.user_info || {}
 		}
@@ -56,34 +57,6 @@ export default {
 <style lang='scss'>
 .bookinfo {
 	font-size: 28rpx;
-	.badge {
-		display: inline-block;
-		margin: 10rpx;
-		padding: 10rpx;
-		border: 2rpx #ea5a49 solid;
-		border-radius: 20rpx;
-		color: #ea5a49;
-	}
-	.summary {
-		margin-top: 20rpx;
-		padding: 0 30rpx;
-		p {
-			text-indent: 2em;
-			font-size: 28rpx;
-		}
-	}
-	.right {
-		float: right;
-	}
-	.detail {
-		padding: 10rpx 20rpx;
-		.avatar {
-			border-radius: 50%;
-			width: 40rpx;
-			height: 40rpx;
-			vertical-align: middle;
-		}
-	}
 	.thumb {
 		position: relative;
 		width: 750rpx;
@@ -102,8 +75,8 @@ export default {
 		}
 		.info {
 			position: absolute;
-			left: 0;
 			top: 330rpx;
+			left: 0;
 			width: 100%;
 			text-align: center;
 			color: #fff;
@@ -113,6 +86,34 @@ export default {
 			.author {
 				font-size: 28rpx;
 			}
+		}
+	}
+	.detail {
+		padding: 10rpx 20rpx;
+		.avatar {
+			border-radius: 50%;
+			width: 40rpx;
+			height: 40rpx;
+			vertical-align: middle;
+		}
+		.right {
+			float: right;
+		}
+	}
+	.badge {
+		display: inline-block;
+		margin: 10rpx;
+		padding: 10rpx;
+		border: 2rpx #ea5a49 solid;
+		border-radius: 20rpx;
+		color: #ea5a49;
+	}
+	.summary {
+		margin-top: 20rpx;
+		padding: 0 30rpx;
+		p {
+			text-indent: 2em;
+			font-size: 28rpx;
 		}
 	}
 }
