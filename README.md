@@ -266,10 +266,11 @@ mysql> select * from test;
 ## 6-3 个人中心-今年过了多少天组件
 
 * **components/YearProgress.vue**
+* 时间处理
 
 ## 6-4, 6-5 个人中心-登录逻辑完善, eslint格式化代码
 
-* **pages/Me.vue/login()**
+* **pages/Me.vue**
 * 修复 **App.vue** -> bug!
 * `wafer2-client-sdk` 应用会话功能
 * `npm run lint`
@@ -293,9 +294,12 @@ mysql> drop table test;
 
 ## 7-2, 7-3 图书录入功能-获取豆瓣图书信息接口
 
-* **pages/me/Me.vue** 添加图书到后端
+* **pages/me/Me.vue**
 * **server/route/index.js**
 * **server/controllers/addbook.js**
+* 前端发送参数到后端
+* server/controllers/addbook.js/getJSON() 异步处理数据
+* 处理豆瓣图书数据
 
 ## 7-4 图书录入功能-mysql 新建图书表结构
 

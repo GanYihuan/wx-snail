@@ -6,6 +6,7 @@ export function get(url, data) {
   return request(url, 'GET', data)
 }
 
+/* http get 工具函数 请求数据 */
 export function post(url, data) {
   return request(url, 'POST', data)
 }
@@ -20,6 +21,7 @@ function request(url, method, data, header = {}) {
       header,
       url: config.host + url,
       success: function(res) {
+        // console.log(res)
         if (res.data.code === 0) {
           resolve(res.data.data)
         } else {

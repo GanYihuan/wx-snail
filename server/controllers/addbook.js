@@ -11,7 +11,7 @@ const { mysql } = require('../qcloud')
  */
 module.exports = async ctx => {
   /* post 请求在 body 字段里面 */
-  /* 前端发过来的 isbn, openid */
+  /* 前端 Me.vue 发过来的 isbn, openid */
   const { isbn, openid } = ctx.request.body
   console.log('添加图书', isbn, openid)
   if (isbn && openid) {
@@ -30,11 +30,12 @@ module.exports = async ctx => {
     }
     let url = 'https://api.douban.com/v2/book/isbn/' + isbn
     console.log(url)
-    /* 下载内容 */
+    /* 抓取豆瓣图书信息 bookinfo */
     const bookinfo = await getJSON(url)
+    /* 显示豆瓣图书单项信息 */
     const rate = bookinfo.rating.average
     const { title, image, alt, publisher, summary, price } = bookinfo
-    // 变成-> tag: "科幻 1000, 小说 500, ..."
+    /* tags 变成 -> tags: "科幻 1000, 小说 500, ..." */
     const tags = bookinfo.tags
       .map(v => {
         return `${v.title} ${v.count}`
@@ -94,8 +95,9 @@ function getJSON(url) {
       })
       /* 获取结束的时候 */
       res.on('end', data => {
-        /* 处理成 json */
+        /* string 处理成 json */
         const bookinfo = JSON.parse(urlData)
+        /* 图书存在 */
         if (bookinfo.title) {
           resolve(bookinfo)
         }
