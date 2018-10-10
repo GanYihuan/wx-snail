@@ -424,6 +424,7 @@ mysql> alter table books add column count init default 0;
 
 * **Detail.vue**
 * 百度地图使用, 转换经纬度为固定数值
+* `wx.getLocation()`
 
 ## 9-7 点击评论发起请求
 
