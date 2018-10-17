@@ -126,11 +126,11 @@ npm i koa-router -S
 
 ## 5-1 腾讯云后台
 
-* [腾讯云 server 下载](https://github.com/tencentyun/wafer2-quickstart-nodejs)
+* [腾讯云 server download](https://github.com/tencentyun/wafer2-quickstart-nodejs)
 * **project.config.json**
 
 ```js
-"qcloudRoot": "server/",
+"qcloudRoot": "./server/",
 ```
 
 * upload -> 首次上传将除‘智能上传’外全勾上上传, 第二次上传选‘智能上传’
@@ -163,11 +163,11 @@ qcloudSecretKey: 'Bb2V8oAb5iP90z16EObp7RD516EOauBT',
 <!-- refresh node -->
 npm install nodemon -g
 brew install mysql
-<!-- 开启 mysql -->
+<!-- open mysql -->
 mysql.server start
-<!-- -p 加密码 -->
+<!-- -p password -->
 mysql -u root
-<!-- cAuth: **server/config.js** 里面定义的 -->
+<!-- cAuth: **server/config.js** defined -->
 mysql> create database cAuth;
 ```
 
@@ -175,7 +175,7 @@ mysql> create database cAuth;
 
 ```console
 cd server
-npm install
+npm i
 node tools/initdb.js
 npm run dev
 ```
@@ -192,7 +192,7 @@ npm run dev
 * **util.js**
 * **config.js**
 * **App.vue**
-* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉
+* (域名, https, 80), 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉
 
 ## 5-10 使用 ESLint 自动规范代码
 

@@ -9,7 +9,7 @@ export default {
 		/* 防止报错: 微信开发者工具 -> detail -> Does not verify ...(勾上), 上线时关掉 */
 		/* wx.request: 发起网络请求, util 替代下面 */
 		// wx.request({
-		// 	url: (config.host = '/weapp/demo'),
+		// 	url: (config.host + '/weapp/demo'),
 		// 	success: function(res) {
 		// 		console.log(res)
 		// 	}
@@ -71,18 +71,22 @@ export default {
 	text-align: center;
 	font-size: 24rpx;
 }
+
 .text-primary {
 	color: #ea5149;
 }
+
 .page-title {
 	padding-left: 40rpx;
 	line-height: 80rpx;
 	font-size: 28rpx;
 	background: #eee;
 }
+
 .right {
 	float: right;
 }
+
 .btn {
 	margin-bottom: 20rpx;
 	padding-left: 30rpx;
@@ -94,6 +98,7 @@ export default {
 	color: white;
 	background: #ea5a49;
 }
+
 .btn:active {
 	background: #fa5a49;
 }
