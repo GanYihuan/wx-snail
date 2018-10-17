@@ -4,7 +4,7 @@
 //     fn()
 //   },1000)
 // }
-/* callback 回调地狱 */
+/* callback Callback hell */
 // ajax(()=>{
 //   console.log('执行结束')
 //   ajax(()=>{
@@ -39,9 +39,9 @@ function delay(word) {
 // // .catch() {}
 
 /**
- * async+await 一起使用, 替代上面的 delay 回调
- * async: 定义一个函数
- * await: 等待一个异步执行结束, 必须在 async 里面
+ * async+await
+ * async: Define a function
+ * await: Waiting for an asynchronous execution to end, inside async
  */
 async function start() {
   const word1 = await delay('孙悟空')

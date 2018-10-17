@@ -2,37 +2,40 @@
 
 > 全网首发 mpvue 课程小程序全栈开发
 
-## 程序运行
+## run program
 
 ```console
-<!-- 管理 node 版本 -->
+<!-- control node version -->
 npm i nvm
-nvm install 10.0.0
+nvm i 10.0.0
 nvm use 10.0.0
-<!-- 开启数据库 mysql -->
+<!-- open mysql -->
 brew install mysql
 mysql.server start
-<!-- -p 加密码 -->
+<!-- -u user, -p pass -->
+mysql -u root -p
+<!-- not add pass -->
 mysql -u root
-<!-- 运行后端服务器 -->
-cd server
+<!-- run back-end -->
+imooc-snail> cd server
 nvm use 10.0.0
 npm run dev
-<!-- 运行程序 -->
+<!-- run front-end -->
 cd imooc-snail
 nvm use 10.0.0
 npm run dev
-<!-- 打开微信开发者工具 -->
-选择 imooc-snail
-输入: [AppID](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
+<!-- open `微信开发者工具` -->
+select imooc-snail
+input: [AppID: wxabcaad13aeed9229 蜗牛蜗牛图书 小程序](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
 ```
 
-> cSessionInfo: 数据库里面保存的获取用户信息
-> books: 图书表结构
+> cSessionInfo: mysql save userInfo
+> books: books structure
 > [data](http://localhost:5757/weapp/booklist)
+> 蜗牛蜗牛图书:
 
-* user: 网页邮箱
-* wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
+* user: m15012856094@163.com
+* APPID: wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
 
 ## 2-1 小程序帐号和开发工具
 
@@ -41,15 +44,15 @@ npm run dev
 * 设置 -> 第三方服务 -> 腾讯云开通
 * [文档地址](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)
 * [开发工具下载地址](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
-* **app.json** 修改小程序外观
+* **app.json** Modify the appearance of the applets
 
 ## 2-2 原生小程序 - 项目目录结构
 
 * **static/01-文件目录**
 * 微信开发者工具 -> 快速启动模板
-* .wxss: 类似 .css, 多了 rpx 单位, 有利于各个平台适配
-* wx. 是微信自带 API
-* **static/02-小程序生命周期.png** vue.js 生命周期取代
+* .wxss: similar .css, rpx: Conducive to adapt to each platform
+* wx. 微信 API
+* **static/02-小程序生命周期.png** vue.js lifeCircle
 
 ## 2-3 原生小程序 - 项目 app.json 配置
 
@@ -88,14 +91,14 @@ npm run dev
 ## 3-7 mpvue 入门
 
 * [mpvue](https://github.com/Meituan-Dianping/mpvue)
-* mpvue: 使用 vue.js 开发小程序的前端框架
+* mpvue: use vue.js Developing a front-end framework for applets
 
 ```console
 nvm use 10.0.0
-npm install vue -g
+npm i vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
-<!-- 输入 APPID: wxabcaad13aeed9229 -->
-npm install
+<!-- input APPID: wxabcaad13aeed9229 -->
+npm i
 npm run dev
 ```
 
@@ -104,7 +107,8 @@ npm run dev
 * **learn-koa/server.js**
 
 ```console
-npm install koa -S
+npm i koa -S
+server> node server.js
 ```
 
 ## 4-3 自己实现 koa-logger 中间件，打印所有请求的耗时
@@ -117,7 +121,7 @@ npm install koa -S
 * **learn-koa/router.js**
 
 ```console
-npm install koa-router -S
+npm i koa-router -S
 ```
 
 ## 5-1 腾讯云后台

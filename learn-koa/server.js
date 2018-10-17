@@ -11,20 +11,21 @@ function delay() {
 }
 
 /*
-async: 定义一个函数
-await: 等待一个异步执行结束, 必须在 async 里面
-Onion model: **洋葱模型.png**
-ctx: 封装了 request response 的上下文
-next: 下一个中间件
-app: 启动应用
-app.use: 是一个中间件
+async: Define a function
+await: Waiting for an asynchronous execution to end, inside async
+Onion model: **Onion model.png**
+ctx: package request & response Context
+next: Next middleware
+app: Launch application
+app.use: Is a middleware
 */
 
 app.use(koaLog)
-// 135642
+
+/* 135642 */
 app.use(async (ctx, next) => {
   console.log(ctx)
-  // **router.js** 替代下面
+  /* **router.js** replace */
   if (ctx.request.url === '/sun') {
     ctx.body = '孙悟空'
   } else if (ctx.request.url === '/zhu') {
