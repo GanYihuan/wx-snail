@@ -214,17 +214,17 @@ npm run lint
 * **App.vue** 获取用户信息后数据会储存到数据库里 cSessionInfo
 
 ```console
-npm install wafer2-client-sdk -S
-npm install sass-loader node-sass -D
+npm i wafer2-client-sdk -S
+npm i sass-loader node-sass -D
 ```
 
 ```console
-<!-- 数据库初始化 -->
+<!-- run server -->
 cd server
-npm install
+npm i
 node tools/initdb.js
 npm run dev
-<!-- 启动 mysql -->
+<!-- run mysql -->
 mysql.server start
 mysql -u root
 <!-- 执行 wafer2-client-sdk 查看数据库里保存的获取用户信息 -->
