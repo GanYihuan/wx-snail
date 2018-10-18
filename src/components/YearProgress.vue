@@ -14,7 +14,7 @@ export default {
 		},
 		days() {
       let start = new Date()
-      /* start 是今年第一天 */
+      /* start: 今年第一天 */
 			start.setMonth(0)
 			start.setDate(1)
       /* 今天的时间戳减去今年第一天的时间戳, 时间戳为毫秒 */
@@ -47,12 +47,12 @@ export default {
 
 <style lang='scss'>
 .progressbar {
-	margin-top: 20rpx;
-	margin-bottom: 80rpx;
+	margin: 20rpx, 0, 80rpx 0;
 	width: 100%;
 	text-align: center;
+
 	progress {
-		margin-bottom: 20rpx;
+		margin: 0 0 20rpx 0;
 	}
 }
 </style>

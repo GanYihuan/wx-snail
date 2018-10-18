@@ -36,6 +36,7 @@ input: [AppID: wxabcaad13aeed9229 蜗牛蜗牛图书 小程序](https://mp.weixi
 
 * user: m15012856094@163.com
 * APPID: wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
+* AppSecret(小程序密钥): d48e6e5e5c94c78dcf9d10ec2b23a3e1
 
 ## 2-1 小程序帐号和开发工具
 
@@ -98,7 +99,7 @@ nvm use 10.0.0
 npm i vue -g
 vue init mpvue/mpvue-quickstart imooc-snailbook
 <!-- input APPID: wxabcaad13aeed9229 -->
-npm i
+npm install
 npm run dev
 ```
 
@@ -175,7 +176,7 @@ mysql> create database cAuth;
 
 ```console
 cd server
-npm i
+npm install
 node tools/initdb.js
 npm run dev
 ```
