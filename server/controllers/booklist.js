@@ -5,7 +5,7 @@ module.exports = async ctx => {
   /* 前端发过来的 page, openid */
   const { page, openid } = ctx.request.query
   const size = 10
-  /* .select('*') 默认是一个表 */
+  /* .select('*') 默认是一个表, 链表查询(多个表) */
   /* 添加微信名和头像要链表查询 .join */
   const mysqlSelect = mysql('books')
     .select('books.*', 'cSessionInfo.user_info')

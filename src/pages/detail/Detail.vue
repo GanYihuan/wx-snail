@@ -169,19 +169,22 @@ export default {
 
 <style lang='scss'>
 .comment {
-	margin-top: 20rpx;
+	margin: 20rpx 0 0 0;
+
 	.textarea {
 		padding: 10rpx;
 		width: 730rpx;
 		height: 200rpx;
 		background: #eee;
 	}
+
 	.location {
-		margin-top: 20rpx;
+		margin: 20rpx 0 0 0;
 		padding: 10rpx 20rpx;
 	}
+
 	.phone {
-		margin-top: 20rpx;
+		margin: 20rpx 0 0 0;
 		padding: 10rpx 20rpx;
 	}
 }

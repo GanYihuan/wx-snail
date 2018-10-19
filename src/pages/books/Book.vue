@@ -1,7 +1,12 @@
 ﻿<template>
   <div>
     <TopSwiper :tops='tops'></TopSwiper>
-    <Pic v-for='book in books' :key='book.id' :book='book'></Pic>
+    <Pic
+      v-for='book in books'
+      :key='book.id'
+      :book='book'
+    >
+    </Pic>
     <p class='text-footer' v-if='!more'>
       没有更多数据
     </p>
@@ -69,7 +74,7 @@ export default {
 			const books = await get('/weapp/booklist', { page: this.page })
 			if (books.list.length < 10 && this.page > 0) {
 				this.more = false
-				console.log('没有更多数据', this.more)
+				console.log('没有更多数据')
 			}
 			if (init) {
 				/* list: 查看 data */

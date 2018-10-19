@@ -3,7 +3,7 @@
     <div class='book-card'>
       <div class='thumb' @click.stop='preview'>
 				<!-- [mode](https://developers.weixin.qq.com/miniprogram/dev/component/image.html) -->
-        <img class='img' :src='book.image' mode='aspectFit'/>
+        <img class='img' :src='book.image' mode='aspectFit' />
       </div>
       <div class='detail'>
         <div class='row text-primary'>
@@ -50,7 +50,7 @@ export default {
 	},
 	methods: {
 		preview() {
-      /* [previewImage](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html) */
+			/* [previewImage](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html) */
 			wx.previewImage({
 				current: this.book.image,
 				urls: [this.book.image]
@@ -66,28 +66,33 @@ export default {
 	padding: 10rpx;
 	font-size: 28rpx;
 	overflow: hidden;
+
 	.thumb {
 		float: left;
 		margin: 0 auto;
 		width: 180rpx;
 		height: 180rpx;
 		overflow: hidden;
+
 		.img {
 			max-width: 100%;
 			max-height: 100%;
 		}
 	}
 	.detail {
-		margin-left: 200rpx;
+		margin: 0 0 0 200rpx;
+
 		.row {
-			margin-bottom: 6rpx;
+			margin: 0 0 6rpx 0;
 			line-height: 40rpx;
 		}
+
 		.right {
 			float: right;
 		}
+
 		.left {
-			margin-right: 160rpx;
+			margin: 0 160rpx 0 0;
 		}
 	}
 }

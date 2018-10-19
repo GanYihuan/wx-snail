@@ -28,6 +28,7 @@ export default {
 .rate {
 	display: inline-block;
 	position: relative;
+
 	.hollow {
 		display: inline-block;
 		position: absolute;
