@@ -55,7 +55,7 @@ export default {
 	background: #eee;
 
 	.comment {
-		margin-bottom: 20rpx;
+		margin: 0 0 20rpx 0;
 		padding: 10rpx 40rpx;
 		background: #fff;
 
