@@ -15,7 +15,7 @@
             class='avatar'
             mode='aspectFit'
             :src='comment.image'
-          >
+          />
           {{comment.title}}
         </div>
         <div class='right'>
@@ -53,16 +53,20 @@ export default {
 .comment-list {
 	font-size: 28rpx;
 	background: #eee;
+
 	.comment {
 		margin-bottom: 20rpx;
 		padding: 10rpx 40rpx;
 		background: #fff;
+
 		.content {
 			margin: 20rpx 0;
 		}
+
 		.user {
 			.inline {
 				display: inline;
+
 				.avatar {
 					border-radius: 50%;
 					width: 40rpx;

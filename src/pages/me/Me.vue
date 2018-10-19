@@ -1,6 +1,6 @@
 ﻿<template>
   <div class='container'>
-    <p>{{userInfo.openId}}</p>
+    <!-- <p>{{userInfo.openId}}</p> -->
     <div class='userInfo'>
       <img class='img' :src='userInfo.avatarUrl' alt="userInfo.avatarUrl" />
       <p>{{userInfo.nickName}}</p>
