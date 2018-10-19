@@ -67,7 +67,7 @@ export default {
 
 <style>
 .text-footer {
-	margin-bottom: 10rpx;
+	margin: 0 0 10rpx 0;
 	text-align: center;
 	font-size: 24rpx;
 }
@@ -77,7 +77,7 @@ export default {
 }
 
 .page-title {
-	padding-left: 40rpx;
+	padding: 0 0 0 40rpx;
 	line-height: 80rpx;
 	font-size: 28rpx;
 	background: #eee;
@@ -88,14 +88,14 @@ export default {
 }
 
 .btn {
-	margin-bottom: 20rpx;
-	padding-left: 30rpx;
+	margin: 0 0 20rpx 0;
+	padding: 0 0 0 30rpx;
 	border-radius: 4rpx;
 	width: 100%;
 	height: 80rpx;
 	line-height: 80rpx;
 	font-size: 32rpx;
-	color: white;
+	color: #fff;
 	background: #ea5a49;
 }
 

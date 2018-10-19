@@ -47,7 +47,7 @@ export default {
 
 <style lang='scss'>
 .progressbar {
-	margin: 20rpx, 0, 80rpx 0;
+	margin: 20rpx 0 80rpx 0;
 	width: 100%;
 	text-align: center;
 

@@ -2,7 +2,7 @@
   <div class='container'>
     <p>{{userInfo.openId}}</p>
     <div class='userInfo'>
-      <img :src='userInfo.avatarUrl' alt="userInfo.avatarUrl" />
+      <img class='img' :src='userInfo.avatarUrl' alt="userInfo.avatarUrl" />
       <p>{{userInfo.nickName}}</p>
     </div>
     <YearProgress></YearProgress>
@@ -20,7 +20,11 @@
     >
       添加图书
     </button>
-		<!-- <button class='btn' v-else @click='login'>
+		<!-- <button
+      class='btn'
+      v-else
+      @click='login'
+    >
       点击登录
     </button> -->
     <button
@@ -188,10 +192,10 @@ export default {
 	padding: 0 30rpx;
 
 	.userInfo {
-		margin-top: 100rpx;
+		margin: 100rpx 0 0 0;
 		text-align: center;
 
-		img {
+		.img {
 			margin: 20rpx;
 			border-radius: 50%;
 			width: 150rpx;
