@@ -264,11 +264,11 @@ mysql> select * from test;
 ## 7-1 图书录入功能 - mysql 使用
 
 ```console
-<!-- 启动 mysql -->
+<!-- start mysql -->
 mysql.server start
-<!-- -p 密码 -->
+<!-- -p password -->
 mysql -u root
-<!-- mysql 操作 -->
+<!-- mysql operation -->
 mysql> show databases;
 mysql> use cAuth;
 mysql> show tables;
@@ -286,6 +286,7 @@ mysql> drop table test;
 * 前端发送参数到后端
 * server/controllers/addbook.js/getJSON() 异步处理数据
 * 处理豆瓣图书数据
+* array -> string
 
 ## 7-4 图书录入功能-mysql 新建图书表结构
 
