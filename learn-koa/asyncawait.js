@@ -39,7 +39,7 @@ function delay(word) {
 // // .catch() {}
 
 /**
- * async+await
+ * async + await
  * async: Define a function
  * await: Waiting for an asynchronous execution to end, inside async
  */

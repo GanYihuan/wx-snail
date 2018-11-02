@@ -14,7 +14,7 @@ export function post(url, data) {
 /* 发起网络请求 */
 function request(url, method, data, header = {}) {
   return new Promise((resolve, reject) => {
-    /* wx.request: 微信自带 API, 发起网络请求 */
+    /* [发起网络请求](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html) */
     wx.request({
       data,
       method,

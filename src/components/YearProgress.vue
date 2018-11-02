@@ -13,13 +13,13 @@ export default {
 			return new Date().getFullYear()
 		},
 		days() {
-      let start = new Date()
-      /* start: 今年第一天 */
+			let start = new Date()
+			/* start: 今年第一天 */
 			start.setMonth(0)
 			start.setDate(1)
-      /* 今天的时间戳减去今年第一天的时间戳, 时间戳为毫秒 */
-      let offset = new Date().getTime() - start.getTime()
-      /* 毫秒 -> 秒 -> 分 -> 时 -> 天 */
+			/* 今天的时间戳减去今年第一天的时间戳, 时间戳为毫秒 */
+			let offset = new Date().getTime() - start.getTime()
+			/* 毫秒 -> 秒 -> 分 -> 时 -> 天 */
 			return parseInt(offset / 1000 / 60 / 60 / 24) + 1
 		},
 		percent() {

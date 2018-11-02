@@ -99,7 +99,7 @@ export default {
 					// 可使用本函数更新登录态
 					qcloud.loginWithCode({
 						success: res => {
-              qcloud.request({
+							qcloud.request({
 								/* 想要使用 optionId 要请求 server/routes/index.js/用户信息接口 */
 								url: config.userUrl,
 								login: true,

@@ -34,10 +34,6 @@ input: [AppID: wxabcaad13aeed9229 蜗牛蜗牛图书 小程序](https://mp.weixi
 > [data](http://localhost:5757/weapp/booklist)
 > 蜗牛蜗牛图书:
 
-* user: m15012856094@163.com
-* APPID: wxabcaad13aeed9229 (蜗牛蜗牛图书 小程序)
-* AppSecret(小程序密钥): d48e6e5e5c94c78dcf9d10ec2b23a3e1
-
 ## 2-1 小程序帐号和开发工具
 
 * [小程序后台](https://mp.weixin.qq.com/)
@@ -89,7 +85,7 @@ input: [AppID: wxabcaad13aeed9229 蜗牛蜗牛图书 小程序](https://mp.weixi
 * 不能使用 npm
 * 需要为小程序单独开发代码，不能和 web 系统重用
 
-## 3-7 mpvue 入门
+## 3-7 mpvue 环境
 
 * [mpvue](https://github.com/Meituan-Dianping/mpvue)
 * mpvue: use vue.js Developing a front-end framework for applets
