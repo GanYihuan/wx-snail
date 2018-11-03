@@ -445,7 +445,7 @@ mysql> alter table books add column count init default 0;
 * **src/config.js** 修改`host`, 微信开发者工具里面复制 `Development Environment request Domain Name`: `https://qod21e5e.qcloud.la`
 * [AppID(小程序 ID)](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
 * **server/config.js** 改两处
-* 微信工具 -> 上传测试代码 -> 除'智能上传'全打钩,登录小程序管理后台 -> 开发管理 -> 开发版本 就可以找到刚提交上传的版本了
+* 微信工具 -> 上传测试代码 -> 除'智能上传'全打钩,登录小程序管理后台 -> 开发管理 -> 开发版本 就可以找到刚提交上传的版本
 > [腾讯云](https://mp.weixin.qq.com/wxopen/thirdtools?action=qcloud_tool&token=1921737503&lang=zh_CN) 刷新
 > mysql 客户端, 用户名: root, 密码: AppID
 
