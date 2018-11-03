@@ -46,15 +46,15 @@ export default {
 	mounted() {
 		this.getList(true)
 		this.getTop()
-  },
-  /* 微信生命周期, 下拉刷新调用 */
+	},
+	/* 微信生命周期, 下拉刷新调用 */
 	/* [refresh](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE) */
 	onPullDownRefresh() {
 		console.log('下拉')
 		this.getList(true)
 		this.getTop()
-  },
-  /* 微信生命周期, 触底调用 */
+	},
+	/* 微信生命周期, 触底调用 */
 	onReachBottom() {
 		if (!this.more) {
 			/* 没有更多了 */

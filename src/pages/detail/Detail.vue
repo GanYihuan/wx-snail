@@ -56,7 +56,7 @@ export default {
 		}
 	},
 	mounted() {
-		/* this.$root.$mp.query: 获取页面的组件 */
+		/* this.$root.$mp.query: 获取小程序在 page onLoade 时候传递的 options */
 		/* [this.$root.$mp.query.id](http://mpvue.com/mpvue/#_18) */
 		this.bookid = this.$root.$mp.query.id
 		this.getDetail()
