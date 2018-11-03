@@ -39,7 +39,7 @@ export default {
 	methods: {
 		handleClick(comment) {
 			if (this.type === 'user') {
-        // [navigateTo](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html)
+				// [navigateTo](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html)
 				wx.navigateTo({
 					url: '/pages/detail/main?id=' + comment.bookid
 				})
