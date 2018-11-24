@@ -6,33 +6,19 @@
       <p>{{userInfo.nickName}}</p>
     </div>
     <YearProgress></YearProgress>
-    <!-- <button
+    <button
       class='btn'
       v-if='userInfo.openId'
       @click='scanBook'
     >
       添加图书
-    </button> -->
-    <button
-      class='btn'
-      v-if='userInfo.city'
-      @click='scanBook'
-    >
-      添加图书
     </button>
-		<!-- <button
-      class='btn'
-      v-else
-      @click='login'
-    >
-      点击登录
-    </button> -->
     <button
       class='btn'
       v-else
-      open-type="getUserInfo"
+      open-type="getuserInfo"
       lang="zh_CN"
-      @getuserinfo='doLogin'
+      @getuserInfo='login'
     >
       点击登录
     </button>
@@ -59,11 +45,11 @@ export default {
 	},
 	/* 跳转到该页面就自动执行, onShow 是微信 API 的生命周期 */
 	onShow() {
+		wx.showShareMenu()
 		let userInfo = wx.getStorageSync('userInfo')
 		if (userInfo) {
 			this.userInfo = userInfo
 		}
-		// console.log(this.userInfo)
 	},
 	methods: {
 		scanBook() {
@@ -87,6 +73,35 @@ export default {
 				openid: this.userInfo.openId
 			})
 			showModal('添加成功', `${res.title}添加成功`)
+		},
+		login() {
+			wx.showToast({
+				title: '登录中',
+				icon: 'loading'
+			})
+			qcloud.setLoginUrl(config.loginUrl)
+			const session = qcloud.Session.get()
+			if (session) {
+				qcloud.loginWithCode({
+					success: res => {
+						console.log('没过期的登录', res)
+						this.loginSuccess(res)
+					},
+					fail: err => {
+						console.error(err)
+					}
+				})
+			} else {
+				qcloud.login({
+					success: res => {
+						console.log('登录成功', res)
+						this.loginSuccess(res)
+					},
+					fail: err => {
+						console.error(err)
+					}
+				})
+			}
 		},
 		doLogin() {
 			/* [qcloud 获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
