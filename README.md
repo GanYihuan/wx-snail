@@ -4,10 +4,10 @@
 
 ## 运行界面
 
-![图书界面]("./static/图书界面.png")
-![图书详情界面]("./static/图书详情界面.png")
-![评论界面]("./static/评论界面.png")
-![登录界面]("./static/登录界面.png")
+![图书界面](http://phkkwov7c.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E7%95%8C%E9%9D%A2.png)
+![图书详情界面](http://phkkwov7c.bkt.clouddn.com/%E5%9B%BE%E4%B9%A6%E8%AF%A6%E6%83%85%E7%95%8C%E9%9D%A2.png)
+![评论界面](http://phkkwov7c.bkt.clouddn.com/%E8%AF%84%E8%AE%BA%E7%95%8C%E9%9D%A2.png)
+![登录界面](http://phkkwov7c.bkt.clouddn.com/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png)
 
 ## run program
 
