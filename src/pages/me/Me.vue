@@ -13,10 +13,9 @@
 
 <script>
 import qcloud from "wafer2-client-sdk";
-import { showToast, post, showModal } from '@/util'
+import { showToast, post, showModal } from "@/util";
 import config from "@/config";
 import YearProgress from "@/components/YearProgress";
-
 export default {
   components: {
     YearProgress
