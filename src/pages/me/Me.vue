@@ -92,69 +92,6 @@ export default {
           }
         });
       }
-    },
-    doLogin() {
-      /* [qcloud 获取用户信息 wafer2-client-sdk](https://github.com/tencentyun/wafer-client-sdk/) */
-      /* [getStorageSync 获取缓存数据](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html) */
-      let user = wx.getStorageSync("userInfo");
-      if (!user) {
-        if (user) {
-          // 第二次登录
-          // 或者本地已经有登录态
-          // 可使用本函数更新登录态
-          qcloud.loginWithCode({
-            success: res => {
-              qcloud.request({
-                /* 想要使用 optionId 要请求 server/routes/index.js/用户信息接口 */
-                url: config.userUrl,
-                login: true,
-                success: userRes => {
-                  console.log(userRes);
-                  /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-                  wx.setStorageSync("userInfo", userRes.data.data);
-                  this.userInfo = userRes.data.data;
-                  showSuccess("登录成功");
-                }
-              });
-              // console.log(res)
-              // /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-              // wx.setStorageSync('userInfo', res)
-              // this.userInfo = res
-              // showSuccess('第二次登录成功')
-            },
-            fail: err => {
-              console.log("第二次登录失败", err);
-            }
-          });
-        } else {
-          // 首次登录
-          qcloud.setLoginUrl(config.loginUrl);
-          qcloud.login({
-            success: res => {
-              qcloud.request({
-                /* 想要使用 optionId 要请求 server/routes/index.js/用户信息接口 */
-                url: config.userUrl,
-                login: true,
-                success: userRes => {
-                  console.log(userRes);
-                  /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-                  wx.setStorageSync("userInfo", userRes.data.data);
-                  this.userInfo = userRes.data.data;
-                  showSuccess("登录成功");
-                }
-              });
-              // console.log(res)
-              // /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
-              // wx.setStorageSync('userInfo', res)
-              // this.userInfo = res
-              // showSuccess('登录成功')
-            },
-            fail: err => {
-              console.log("登录失败", err);
-            }
-          });
-        }
-      }
     }
   }
 };
