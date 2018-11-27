@@ -12,9 +12,8 @@ nvm use 10.0.0
 <!-- open mysql -->
 brew install mysql
 mysql.server start
-<!-- -u user, -p pass -->
-mysql -u root -p
-<!-- not add pass -->
+<!-- mysql -u user root -p pass -->
+<!-- no pass -->
 mysql -u root
 <!-- run back-end -->
 imooc-snail> cd server
@@ -216,18 +215,21 @@ npm i sass-loader node-sass -D
 ```
 
 ```console
+<!-- run mysql -->
+mysql.server start
+mysql -u root
+
 <!-- run server -->
 cd server
 npm i
 node tools/initdb.js
 npm run dev
-<!-- run mysql -->
-mysql.server start
-mysql -u root
+
 <!-- 执行 wafer2-client-sdk 查看数据库里保存的获取用户信息 -->
 mysql> use cAuth;
 mysql> show tables;
 mysql> select * from cSessionInfo;
+
 <!-- mysql 基础操作  -->
 mysql> create database woniu;
 mysql> create table test(id int, name varchar(100));
@@ -250,7 +252,7 @@ mysql> select * from test;
 * **components/YearProgress.vue**
 * 时间处理
 
-## 6-4, 6-5 个人中心-登录逻辑完善, eslint格式化代码
+## 6-4, 6-5 个人中心-登录逻辑完善, eslint 格式化代码
 
 * **pages/Me.vue**
 * 修复 **App.vue** -> bug!
@@ -264,6 +266,7 @@ mysql> select * from test;
 mysql.server start
 <!-- -p password -->
 mysql -u root
+
 <!-- mysql operation -->
 mysql> show databases;
 mysql> use cAuth;
@@ -446,8 +449,8 @@ mysql> alter table books add column count init default 0;
 * [AppID(小程序 ID)](https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=1921737503&lang=zh_CN)
 * **server/config.js** 改两处
 * 微信工具 -> 上传测试代码 -> 除'智能上传'全打钩,登录小程序管理后台 -> 开发管理 -> 开发版本 就可以找到刚提交上传的版本
-> [腾讯云](https://mp.weixin.qq.com/wxopen/thirdtools?action=qcloud_tool&token=1921737503&lang=zh_CN) 刷新
-> mysql 客户端, 用户名: root, 密码: AppID
+  > [腾讯云](https://mp.weixin.qq.com/wxopen/thirdtools?action=qcloud_tool&token=1921737503&lang=zh_CN) 刷新
+  > mysql 客户端, 用户名: root, 密码: AppID
 
 ```console
 <!-- 内容复制到 mysql 客户端, cAuth -> SQL 里面 -->

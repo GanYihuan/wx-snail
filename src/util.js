@@ -6,7 +6,6 @@ export function get(url, data) {
   return request(url, 'GET', data)
 }
 
-/* http get 工具函数 请求数据 */
 export function post(url, data) {
   return request(url, 'POST', data)
 }
@@ -14,14 +13,13 @@ export function post(url, data) {
 /* 发起网络请求 */
 function request(url, method, data, header = {}) {
   return new Promise((resolve, reject) => {
-    /* [发起网络请求](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html) */
+    /* wx.request: 微信自带 API, 发起网络请求 */
     wx.request({
       data,
       method,
       header,
       url: config.host + url,
       success: function(res) {
-        // console.log(res)
         if (res.data.code === 0) {
           resolve(res.data.data)
         } else {
@@ -43,10 +41,11 @@ export function showModal(title, content) {
   })
 }
 
-export function showSuccess(text) {
+export function showToast(title, icon) {
   /* [showToast](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html) */
   wx.showToast({
-    title: text,
-    icon: 'success'
+    title: title,
+    icon: icon,
+    duration: 2000
   })
 }
