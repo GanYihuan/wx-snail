@@ -43,7 +43,6 @@ export default {
       wx.scanCode({
         success: res => {
           if (res.result) {
-            // console.log(res)
             this.addBook(res.result);
           }
         }
@@ -65,7 +64,6 @@ export default {
       /* [setStorageSync 数据缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html) */
       wx.setStorageSync("userInfo", res);
       this.userInfo = res;
-      // this.hasBooks(true);
     },
     login() {
       showToast("登录中", "loading");
