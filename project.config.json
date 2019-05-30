@@ -12,6 +12,8 @@
 	"compileType": "miniprogram",
 	"appid": "wxabcaad13aeed9229",
 	"projectname": "imooc-snail",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
